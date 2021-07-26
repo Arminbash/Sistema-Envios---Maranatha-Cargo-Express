@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>_2.MCargoExpress.Persistence.Mysql</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\1.MCargoExpress.Domain\MCargoExpress.Domain.csproj" />
+    <ProjectReference Include="..\2.MCargoExpress.Persistence.Settings\MCargoExpress.Persistence.Settings.csproj" />
+  </ItemGroup>
+
+</Project>

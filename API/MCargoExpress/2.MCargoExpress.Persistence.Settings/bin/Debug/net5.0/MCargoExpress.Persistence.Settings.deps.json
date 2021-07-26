@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MCargoExpress.Persistence.Settings/1.0.0": {
+        "dependencies": {
+          "MCargoExpress.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MCargoExpress.Persistence.Settings.dll": {}
+        }
+      },
+      "MCargoExpress.Domain/1.0.0": {
+        "runtime": {
+          "MCargoExpress.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MCargoExpress.Persistence.Settings/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MCargoExpress.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

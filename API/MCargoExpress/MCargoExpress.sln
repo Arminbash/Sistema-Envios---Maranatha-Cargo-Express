@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Domain", "1.MCargoExpress.Domain\MCargoExpress.Domain.csproj", "{403CC17F-FE88-41BD-90D2-8728EC9D79B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.MCargoExpress.Persistence", "2.MCargoExpress.Persistence", "{DEAA9EDC-FAD6-4E80-9034-A3BAE74C817E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Persistence.Settings", "2.MCargoExpress.Persistence.Settings\MCargoExpress.Persistence.Settings.csproj", "{0ACE3D15-9B0C-4FD1-AC11-681E88184909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Persistence.Mysql", "2.MCargoExpress.Persistence.Mysql\MCargoExpress.Persistence.Mysql.csproj", "{F66F4910-6F60-4CC0-8FD3-558AF03DC652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Aplication", "4.MCargoExpress.Aplication\MCargoExpress.Aplication.csproj", "{FA7101DA-9D86-4A81-96AF-94CB0759325C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Jobs", "5.MCargoExpress.Jobs\MCargoExpress.Jobs.csproj", "{22AD9056-C0DB-4B62-B0BD-FD91770271A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.MCagoExpress.CRUD", "5.MCagoExpress.CRUD", "{87464B9D-3989-477E-BB9D-5A96A0C15619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.CRUD.Commands", "3.1.MCargoExpress.CRUD.Commands\MCargoExpress.CRUD.Commands.csproj", "{2EA57B89-9B5C-4FC1-BFCE-101CBB9238A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.CRUD.Querys", "3.2.MCargoExpress.CRUD.Querys\MCargoExpress.CRUD.Querys.csproj", "{ABEDF8F8-05BB-4E54-88BA-3C4BD15F35F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.MCargoExpress.Domain", "1.MCargoExpress.Domain", "{A7B2F762-AD64-42B8-8E73-BFB36798A15C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.MCargoExpress.Dtos", "3.MCargoExpress.Dtos", "{149525F0-E659-4F1E-99A1-C837D6043D19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.MCargoExpress.Aplication", "4.MCargoExpress.Aplication", "{E86D762B-8114-4D88-824F-325A8934312A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.MCargoExpress.Jobs", "6.MCargoExpress.Jobs", "{83F053DF-F703-4085-8CA0-1622D92F316C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.MCargoExpress.Reports", "7.MCargoExpress.Reports", "{154939A8-B1BA-4286-B272-2669247990EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Api", "MCargoExpress.Api\MCargoExpress.Api.csproj", "{C58A8BAB-7B8D-40E4-8447-6815DDB04279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Reports", "MCargoExpress.Reports\MCargoExpress.Reports.csproj", "{28F3D40C-21A1-4DA4-8D9F-F9443853063B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Persistence.SqlServer", "MCargoExpress.Persistence.SqlServer\MCargoExpress.Persistence.SqlServer.csproj", "{D623EB2D-FF43-4E59-8E9C-1FD461E3F24E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCargoExpress.Dtos", "MCargoExpress.Dtos\MCargoExpress.Dtos.csproj", "{EDA6EB58-6C58-491F-885E-28C74BF80A67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{403CC17F-FE88-41BD-90D2-8728EC9D79B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{403CC17F-FE88-41BD-90D2-8728EC9D79B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{403CC17F-FE88-41BD-90D2-8728EC9D79B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{403CC17F-FE88-41BD-90D2-8728EC9D79B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ACE3D15-9B0C-4FD1-AC11-681E88184909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACE3D15-9B0C-4FD1-AC11-681E88184909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACE3D15-9B0C-4FD1-AC11-681E88184909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACE3D15-9B0C-4FD1-AC11-681E88184909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66F4910-6F60-4CC0-8FD3-558AF03DC652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66F4910-6F60-4CC0-8FD3-558AF03DC652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66F4910-6F60-4CC0-8FD3-558AF03DC652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66F4910-6F60-4CC0-8FD3-558AF03DC652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7101DA-9D86-4A81-96AF-94CB0759325C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7101DA-9D86-4A81-96AF-94CB0759325C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7101DA-9D86-4A81-96AF-94CB0759325C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7101DA-9D86-4A81-96AF-94CB0759325C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22AD9056-C0DB-4B62-B0BD-FD91770271A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22AD9056-C0DB-4B62-B0BD-FD91770271A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22AD9056-C0DB-4B62-B0BD-FD91770271A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22AD9056-C0DB-4B62-B0BD-FD91770271A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA57B89-9B5C-4FC1-BFCE-101CBB9238A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA57B89-9B5C-4FC1-BFCE-101CBB9238A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA57B89-9B5C-4FC1-BFCE-101CBB9238A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA57B89-9B5C-4FC1-BFCE-101CBB9238A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABEDF8F8-05BB-4E54-88BA-3C4BD15F35F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEDF8F8-05BB-4E54-88BA-3C4BD15F35F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEDF8F8-05BB-4E54-88BA-3C4BD15F35F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEDF8F8-05BB-4E54-88BA-3C4BD15F35F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C58A8BAB-7B8D-40E4-8447-6815DDB04279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58A8BAB-7B8D-40E4-8447-6815DDB04279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C58A8BAB-7B8D-40E4-8447-6815DDB04279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C58A8BAB-7B8D-40E4-8447-6815DDB04279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F3D40C-21A1-4DA4-8D9F-F9443853063B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F3D40C-21A1-4DA4-8D9F-F9443853063B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F3D40C-21A1-4DA4-8D9F-F9443853063B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F3D40C-21A1-4DA4-8D9F-F9443853063B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D623EB2D-FF43-4E59-8E9C-1FD461E3F24E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D623EB2D-FF43-4E59-8E9C-1FD461E3F24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D623EB2D-FF43-4E59-8E9C-1FD461E3F24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D623EB2D-FF43-4E59-8E9C-1FD461E3F24E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA6EB58-6C58-491F-885E-28C74BF80A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA6EB58-6C58-491F-885E-28C74BF80A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA6EB58-6C58-491F-885E-28C74BF80A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA6EB58-6C58-491F-885E-28C74BF80A67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{403CC17F-FE88-41BD-90D2-8728EC9D79B2} = {A7B2F762-AD64-42B8-8E73-BFB36798A15C}
+		{0ACE3D15-9B0C-4FD1-AC11-681E88184909} = {DEAA9EDC-FAD6-4E80-9034-A3BAE74C817E}
+		{F66F4910-6F60-4CC0-8FD3-558AF03DC652} = {DEAA9EDC-FAD6-4E80-9034-A3BAE74C817E}
+		{FA7101DA-9D86-4A81-96AF-94CB0759325C} = {E86D762B-8114-4D88-824F-325A8934312A}
+		{22AD9056-C0DB-4B62-B0BD-FD91770271A4} = {83F053DF-F703-4085-8CA0-1622D92F316C}
+		{2EA57B89-9B5C-4FC1-BFCE-101CBB9238A1} = {87464B9D-3989-477E-BB9D-5A96A0C15619}
+		{ABEDF8F8-05BB-4E54-88BA-3C4BD15F35F3} = {87464B9D-3989-477E-BB9D-5A96A0C15619}
+		{28F3D40C-21A1-4DA4-8D9F-F9443853063B} = {154939A8-B1BA-4286-B272-2669247990EC}
+		{D623EB2D-FF43-4E59-8E9C-1FD461E3F24E} = {DEAA9EDC-FAD6-4E80-9034-A3BAE74C817E}
+		{EDA6EB58-6C58-491F-885E-28C74BF80A67} = {149525F0-E659-4F1E-99A1-C837D6043D19}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48039811-73B0-4507-B959-B1CA8603C676}
+	EndGlobalSection
+EndGlobal

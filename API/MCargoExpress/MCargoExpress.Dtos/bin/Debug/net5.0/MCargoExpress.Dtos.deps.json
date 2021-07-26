@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MCargoExpress.Dtos/1.0.0": {
+        "runtime": {
+          "MCargoExpress.Dtos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MCargoExpress.Dtos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

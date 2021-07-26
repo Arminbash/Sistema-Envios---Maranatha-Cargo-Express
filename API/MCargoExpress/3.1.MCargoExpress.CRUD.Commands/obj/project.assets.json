@@ -1,0 +1,155 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "MCargoExpress.Aplication/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MCargoExpress.Domain": "1.0.0",
+          "MCargoExpress.Dtos": "1.0.0",
+          "MCargoExpress.Persistence.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MCargoExpress.Aplication.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MCargoExpress.Aplication.dll": {}
+        }
+      },
+      "MCargoExpress.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MCargoExpress.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MCargoExpress.Domain.dll": {}
+        }
+      },
+      "MCargoExpress.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MCargoExpress.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MCargoExpress.Dtos.dll": {}
+        }
+      },
+      "MCargoExpress.Persistence.Settings/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MCargoExpress.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MCargoExpress.Persistence.Settings.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MCargoExpress.Persistence.Settings.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MCargoExpress.Aplication/1.0.0": {
+      "type": "project",
+      "path": "../4.MCargoExpress.Aplication/MCargoExpress.Aplication.csproj",
+      "msbuildProject": "../4.MCargoExpress.Aplication/MCargoExpress.Aplication.csproj"
+    },
+    "MCargoExpress.Domain/1.0.0": {
+      "type": "project",
+      "path": "../1.MCargoExpress.Domain/MCargoExpress.Domain.csproj",
+      "msbuildProject": "../1.MCargoExpress.Domain/MCargoExpress.Domain.csproj"
+    },
+    "MCargoExpress.Dtos/1.0.0": {
+      "type": "project",
+      "path": "../MCargoExpress.Dtos/MCargoExpress.Dtos.csproj",
+      "msbuildProject": "../MCargoExpress.Dtos/MCargoExpress.Dtos.csproj"
+    },
+    "MCargoExpress.Persistence.Settings/1.0.0": {
+      "type": "project",
+      "path": "../2.MCargoExpress.Persistence.Settings/MCargoExpress.Persistence.Settings.csproj",
+      "msbuildProject": "../2.MCargoExpress.Persistence.Settings/MCargoExpress.Persistence.Settings.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "MCargoExpress.Aplication >= 1.0.0",
+      "MCargoExpress.Domain >= 1.0.0",
+      "MCargoExpress.Dtos >= 1.0.0",
+      "MCargoExpress.Persistence.Settings >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Arminbash\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\3.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
+      "projectName": "MCargoExpress.CRUD.Commands",
+      "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\3.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
+      "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\3.1.MCargoExpress.CRUD.Commands\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+              "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+            },
+            "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+              "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+            },
+            "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj": {
+              "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj"
+            },
+            "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+              "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpress\\MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

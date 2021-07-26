@@ -1,0 +1,12 @@
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\bin\Debug\net5.0\MCargoExpress.Domain.deps.json
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\bin\Debug\net5.0\MCargoExpress.Domain.dll
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\bin\Debug\net5.0\ref\MCargoExpress.Domain.dll
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\bin\Debug\net5.0\MCargoExpress.Domain.pdb
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\MCargoExpress.Domain.csproj.AssemblyReference.cache
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\MCargoExpress.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\MCargoExpress.Domain.AssemblyInfoInputs.cache
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\MCargoExpress.Domain.AssemblyInfo.cs
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\MCargoExpress.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\MCargoExpress.Domain.dll
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\ref\MCargoExpress.Domain.dll
+C:\Users\Arminbash\source\repos\MCargoExpress\1.MCargoExpress.Domain\obj\Debug\net5.0\MCargoExpress.Domain.pdb
