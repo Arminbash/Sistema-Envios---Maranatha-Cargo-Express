@@ -1,0 +1,127 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "MCargoExpress.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MCargoExpress.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MCargoExpress.Domain.dll": {}
+        }
+      },
+      "MCargoExpress.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MCargoExpress.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MCargoExpress.Interfaces.dll": {}
+        }
+      },
+      "MCargoExpress.Persistence.Settings/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MCargoExpress.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MCargoExpress.Persistence.Settings.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MCargoExpress.Persistence.Settings.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MCargoExpress.Domain/1.0.0": {
+      "type": "project",
+      "path": "../1.MCargoExpress.Domain/MCargoExpress.Domain.csproj",
+      "msbuildProject": "../1.MCargoExpress.Domain/MCargoExpress.Domain.csproj"
+    },
+    "MCargoExpress.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../3.3.MCargoExpress.Interfaces/MCargoExpress.Interfaces.csproj",
+      "msbuildProject": "../3.3.MCargoExpress.Interfaces/MCargoExpress.Interfaces.csproj"
+    },
+    "MCargoExpress.Persistence.Settings/1.0.0": {
+      "type": "project",
+      "path": "../2.2.MCargoExpress.Persistence.Settings/MCargoExpress.Persistence.Settings.csproj",
+      "msbuildProject": "../2.2.MCargoExpress.Persistence.Settings/MCargoExpress.Persistence.Settings.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "MCargoExpress.Interfaces >= 1.0.0",
+      "MCargoExpress.Persistence.Settings >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Arminbash\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj",
+      "projectName": "MCargoExpress.Persistence.Mysql",
+      "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj",
+      "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+              "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+            },
+            "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
+              "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

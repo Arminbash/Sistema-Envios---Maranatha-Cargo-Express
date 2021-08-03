@@ -1,0 +1,305 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj",
+        "projectName": "MCargoExpress.Domain",
+        "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj",
+        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj",
+        "projectName": "MCargoExpress.Persistence.Settings",
+        "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj",
+        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj",
+        "projectName": "MCargoExpress.Dtos",
+        "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj",
+        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj",
+        "projectName": "MCargoExpress.Aplication",
+        "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj",
+        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\4.MCargoExpress.Aplication\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              },
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+              },
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
+        "projectName": "MCargoExpress.CRUD.Commands",
+        "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
+        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              },
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+              },
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
+              },
+              "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj": {
+                "projectPath": "C:\\Users\\Arminbash\\source\\repos\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

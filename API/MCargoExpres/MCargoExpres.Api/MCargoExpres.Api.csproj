@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\5.1.MCargoExpress.CRUD.Commands\MCargoExpress.CRUD.Commands.csproj" />
+    <ProjectReference Include="..\5.2.MCargoExpress.CRUD.Querys\MCargoExpress.CRUD.Querys.csproj" />
+    <ProjectReference Include="..\6.MCargoExpress.Jobs\MCargoExpress.Jobs.csproj" />
+  </ItemGroup>
+
+</Project>
