@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Arminbash\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Arminbash\\.nuget\\packages"
+    ]
+  }
+}
