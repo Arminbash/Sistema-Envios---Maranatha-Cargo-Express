@@ -3,13 +3,17 @@ C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\ref\MCargoExpress.Persistence.Connection.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Persistence.Connection.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Domain.dll
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Dtos.dll
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Enums.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Interfaces.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Persistence.Mysql.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Persistence.Settings.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Persistence.Mysql.pdb
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Enums.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Domain.pdb
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Dtos.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Interfaces.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Persistence.Settings.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\obj\Debug\net5.0\MCargoExpress.Persistence.Connection.csproj.AssemblyReference.cache
@@ -21,7 +25,3 @@ C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\obj\Debug\net5.0\MCargoExpress.Persistence.Connection.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\obj\Debug\net5.0\ref\MCargoExpress.Persistence.Connection.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\obj\Debug\net5.0\MCargoExpress.Persistence.Connection.pdb
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Enums.dll
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Enums.pdb
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Dtos.dll
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.1.MCargoExpress.Persistence.Connection\bin\Debug\net5.0\MCargoExpress.Dtos.pdb

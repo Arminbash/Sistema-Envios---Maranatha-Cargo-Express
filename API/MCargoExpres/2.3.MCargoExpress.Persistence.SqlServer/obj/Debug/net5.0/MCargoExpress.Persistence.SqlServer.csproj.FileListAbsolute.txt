@@ -1,13 +1,17 @@
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.deps.json
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.runtimeconfig.json
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.runtimeconfig.dev.json
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\ref\MCargoExpress.Persistence.SqlServer.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Domain.dll
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Dtos.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Interfaces.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.Settings.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.Settings.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Interfaces.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Domain.pdb
+C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Dtos.pdb
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\obj\Debug\net5.0\MCargoExpress.Persistence.SqlServer.csproj.AssemblyReference.cache
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\obj\Debug\net5.0\MCargoExpress.Persistence.SqlServer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\obj\Debug\net5.0\MCargoExpress.Persistence.SqlServer.AssemblyInfoInputs.cache
@@ -17,8 +21,4 @@ C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\obj\Debug\net5.0\MCargoExpress.Persistence.SqlServer.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\obj\Debug\net5.0\ref\MCargoExpress.Persistence.SqlServer.dll
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\obj\Debug\net5.0\MCargoExpress.Persistence.SqlServer.pdb
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.runtimeconfig.json
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Persistence.SqlServer.runtimeconfig.dev.json
 C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\obj\Debug\net5.0\MCargoExpress.Persistence.SqlServer.genruntimeconfig.cache
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Dtos.dll
-C:\Users\Arminbash\Documents\GitHub\Sistema-Envios---Maranatha-Cargo-Express\API\MCargoExpres\2.3.MCargoExpress.Persistence.SqlServer\bin\Debug\net5.0\MCargoExpress.Dtos.pdb

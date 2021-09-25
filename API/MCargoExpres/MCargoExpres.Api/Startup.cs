@@ -15,6 +15,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols;
 using MCargoExpres.Api.Configuration;
 using _3._1.MCargoExpress.Dtos;
+using MediatR;
+using _5._1.MCargoExpress.CRUD.Commands.Login;
 
 namespace MCargoExpres.Api
 {
@@ -32,26 +34,28 @@ namespace MCargoExpres.Api
         {
             services.AddMvc();
             services.AddControllers();
-            
+
             //Se configuran las conexiones de las base de datos
-            ConnectionConfig.Config(Configuration,services);
+            ConnectionConfig.Config(Configuration, services);
             services.AddOptions();
+
+            services.AddMediatR(typeof(Login.Manejador).Assembly);
+            services.AddMediatR(typeof(_5._2.MCargoExpress.CRUD.Querys.Login.UsuarioActual).Assembly);
+
             //Configuracion del dapper
             DapperConfig.Config(Configuration, services);
 
-            services.AddAutoMapper(typeof(MappingProfiles));
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MaranathaCargoExpres-Api", Version = "v1" });
-            });
+            //Configura la seguridad del identity
+            SeguridadConfig.Config(Configuration, services);
 
-            services.AddCors(opt =>
-            {
-                opt.AddPolicy("CorsRule", rule =>
-                {
-                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
-                });
-            });
+            //Configuracion del autoMapper
+            services.AddAutoMapper(typeof(MappingProfiles));
+
+            //Configuracion del swagger
+            SwaggerConfig.Config(Configuration, services);
+
+            //Configuracion de los cors
+            CorsConfig.Config(Configuration, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,14 +63,13 @@ namespace MCargoExpres.Api
         {
             //Configuracion del middleware
             MiddlewareConfig.Config(app);
+
             if (env.IsDevelopment())
             {
                 // se deshabilita el uso de excepciones para usar el middleware
                 //app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MaranathaCargoExpres-Api v1"));
             }
-            app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");
+            app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");           
 
             app.UseHttpsRedirection();
 
@@ -76,10 +79,17 @@ namespace MCargoExpres.Api
 
             app.UseAuthorization();
 
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            //Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MaranathaCargoExpres-Api v1"));
+
         }
     }
 }
