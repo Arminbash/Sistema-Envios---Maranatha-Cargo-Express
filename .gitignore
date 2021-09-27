@@ -99,7 +99,13 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
-
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+*.assets.json
+*.nuget.cache
+*.packagespec.json
+*.project.restore.info
 # Chutzpah Test files
 _Chutzpah*
 
