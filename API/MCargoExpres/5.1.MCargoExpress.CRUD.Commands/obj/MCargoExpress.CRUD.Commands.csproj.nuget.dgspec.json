@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj": {}
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj",
         "projectName": "MCargoExpress.Domain",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,21 +76,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj",
         "projectName": "MCargoExpress.Persistence.Connection",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,14 +108,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj"
               }
             }
           }
@@ -150,21 +158,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj",
         "projectName": "MCargoExpress.Persistence.Settings",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,11 +190,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj"
               }
             }
           }
@@ -257,21 +269,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj",
         "projectName": "MCargoExpress.Persistence.SqlServer",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\MCargoExpress.Persistence.SqlServer.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -285,11 +301,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj"
               }
             }
           }
@@ -348,21 +364,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj",
         "projectName": "MCargoExpress.Persistence.Mysql",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\MCargoExpress.Persistence.Mysql.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.4.MCargoExpress.Persistence.Mysql\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -376,11 +396,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj"
               }
             }
           }
@@ -423,21 +443,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj",
         "projectName": "MCargoExpress.Dtos",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -451,8 +475,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
               }
             }
           }
@@ -499,21 +523,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj",
         "projectName": "MCargoExpress.Enums",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\MCargoExpress.Enums.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.2.MCargoExpress.Enums\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -567,21 +595,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj",
         "projectName": "MCargoExpress.Interfaces",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\MCargoExpress.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -595,11 +627,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
               }
             }
           }
@@ -642,21 +674,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj",
         "projectName": "MCargoExpress.Aplication",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -670,17 +706,17 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.1.MCargoExpress.Persistence.Connection\\MCargoExpress.Persistence.Connection.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
               }
             }
           }
@@ -727,21 +763,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj": {
+    "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
         "projectName": "MCargoExpress.CRUD.Commands",
-        "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
-        "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\obj\\",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\MCargoExpress.CRUD.Commands.csproj",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\5.1.MCargoExpress.CRUD.Commands\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -755,17 +795,17 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\MCargoExpress.Domain.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\MCargoExpress.Persistence.Settings.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\MCargoExpress.Dtos.csproj"
               },
-              "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj": {
-                "projectPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj"
+              "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj": {
+                "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\4.MCargoExpress.Aplication\\MCargoExpress.Aplication.csproj"
               }
             }
           }
@@ -820,7 +860,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
