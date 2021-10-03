@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace _1.MCargoExpress.Domain
 {
-    /// <summary>
-    /// Modelo de persona
-    /// </summary>
-    /// Francisco Rios
-    public class TipoPersona:ClaseBase
-    {
-       
+   
         /// <summary>
-        /// Tipo de Persona
+        /// Modelo de persona
         /// </summary>
-        public string Tipo { get; set; }
+        /// Francisco Rios
+        public class TipoPersona : ClaseBase
+        {
 
-        /// <summary>
-        /// clave forranea del  persona
-        /// </summary>
-        public virtual ICollection<Persona> Persona { get; set; }
+            /// <summary>
+            /// Tipo de Persona
+            /// </summary>
+            public string Tipo { get; set; }
+
+            /// <summary>
+            /// clave forranea del  persona
+            /// </summary>
+            public virtual ICollection<Persona> Persona { get; set; }
+        }
     }
-}
+

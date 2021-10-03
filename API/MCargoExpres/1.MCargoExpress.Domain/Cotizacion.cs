@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace _1.MCargoExpress.Domain
         /// <summary>
         /// clave foranea del Recibe
         /// </summary>
-        [ForeignKey("Recibe")]
+    
         public int RecibeId { get; set; }
         /// <summary>
         ///Fecha de la Factura
@@ -48,7 +49,7 @@ namespace _1.MCargoExpress.Domain
         /// Propiedad de navegacion de Recibe
         /// </summary>
        
-        public virtual Recibe Recibe { get; set; }
+     //   public virtual Recibe Recibe { get; set; }
         /// <summary>
         /// Propiedad de navegacion de Envia
         /// </summary>

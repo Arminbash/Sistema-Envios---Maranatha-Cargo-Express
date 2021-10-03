@@ -28,9 +28,6 @@ namespace _2._2.MCargoExpress.Persistence.Settings.FluentApiTables
                 .Property(b => b.EnviaId)
                 .IsRequired();
             builder
-               .Property(b => b.RecibeId)
-               .IsRequired();
-            builder
                 .Property(b => b.FechaIngreso)
                 .IsRequired();
             builder

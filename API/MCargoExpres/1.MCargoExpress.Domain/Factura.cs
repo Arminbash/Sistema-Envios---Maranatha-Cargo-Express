@@ -23,7 +23,7 @@ namespace _1.MCargoExpress.Domain
         /// <summary>
         /// clave foranea del Recibe
         /// </summary>
-        [ForeignKey("Recibe")]
+       // [ForeignKey("Recibe")]
         public int RecibeId { get; set; }
         /// <summary>
         ///Fecha de la Factura
@@ -49,7 +49,7 @@ namespace _1.MCargoExpress.Domain
         /// propiedad de navegacion de Recive
         /// </summary>
       
-        public virtual Recibe Recibe { get; set; }
+       // public virtual Recibe Recibe { get; set; }
         /// <summary>
         /// propiedad de navegacion de Envia
         /// </summary>

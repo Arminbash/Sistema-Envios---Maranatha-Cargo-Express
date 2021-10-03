@@ -41,8 +41,8 @@ namespace _1.MCargoExpress.Domain
       
         public virtual Cliente Cliente { get; set; }
        
-        public virtual ICollection<Factura> Factura { get; set; }
-        public virtual ICollection<Cotizacion> Cotizacion { get; set; }
+       // public virtual ICollection<Factura> Factura { get; set; }
+       // public virtual ICollection<Cotizacion> Cotizacion { get; set; }
 
     }
 }
