@@ -33,6 +33,6 @@
     <ProjectReference Include="..\6.MCargoExpress.Jobs\MCargoExpress.Jobs.csproj" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
