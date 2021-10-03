@@ -43,6 +43,8 @@ namespace _4.MCargoExpress.Aplication.Security
         public string CrearToken(Usuario usuario, List<string> roles)
         {
             var claims = new List<Claim> {
+                new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
+                new Claim("username", usuario.UserName),
                 new Claim(JwtRegisteredClaimNames.NameId, usuario.UserName)
             };
             if (roles != null)
@@ -58,7 +60,8 @@ namespace _4.MCargoExpress.Aplication.Security
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(30),
-                SigningCredentials = credenciales
+                SigningCredentials = credenciales,
+                Issuer = _config["Token:Issuer"]
             };
 
             var tokenManejador = new JwtSecurityTokenHandler();

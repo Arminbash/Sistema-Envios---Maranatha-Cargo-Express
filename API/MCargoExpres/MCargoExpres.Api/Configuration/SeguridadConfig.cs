@@ -58,7 +58,7 @@ namespace MCargoExpres.Api.Configuration
 
             services.TryAddSingleton<ISystemClock, SystemClock>();
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Key para los tokens del identity"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:Key"]));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
             {

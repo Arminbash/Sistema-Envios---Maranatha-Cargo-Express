@@ -69,17 +69,17 @@ namespace MCargoExpres.Api
                 // se deshabilita el uso de excepciones para usar el middleware
                 //app.UseDeveloperExceptionPage();
             }
-            app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");           
+            app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 
             app.UseCors("CorsRule");
 
             app.UseAuthorization();
-
-            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
