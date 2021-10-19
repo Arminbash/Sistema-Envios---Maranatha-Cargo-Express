@@ -17,6 +17,11 @@ using MCargoExpres.Api.Configuration;
 using _3._1.MCargoExpress.Dtos;
 using MediatR;
 using _5._1.MCargoExpress.CRUD.Commands.Login;
+using _5._1.MCargoExpress.CRUD.Commands._TipoPersona;
+using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
+using _4.MCargoExpress.Aplication.Logic;
+using _2._1.MCargoExpress.Persistence.Connection;
+using _3._3.MCargoExpress.Interfaces;
 
 namespace MCargoExpres.Api
 {
@@ -41,7 +46,7 @@ namespace MCargoExpres.Api
 
             services.AddMediatR(typeof(Login.Manejador).Assembly);
             services.AddMediatR(typeof(_5._2.MCargoExpress.CRUD.Querys.Login.UsuarioActual).Assembly);
-
+           
             //Configuracion del dapper
             DapperConfig.Config(Configuration, services);
 
@@ -56,6 +61,9 @@ namespace MCargoExpres.Api
 
             //Configuracion de los cors
             CorsConfig.Config(Configuration, services);
+
+            services.AddScoped<IContextos, Contextos>();
+            services.AddScoped<ITipoPersonaService, TipoPersonaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -91,5 +99,9 @@ namespace MCargoExpres.Api
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MaranathaCargoExpres-Api v1"));
 
         }
+    }
+
+    internal class AddTipoPersonaAsync
+    {
     }
 }

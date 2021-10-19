@@ -1,4 +1,6 @@
-﻿using _5._1.MCargoExpress.CRUD.Commands._TipoPersona;
+﻿using _1.MCargoExpress.Domain;
+using _5._1.MCargoExpress.CRUD.Commands._TipoPersona;
+using _5._2.MCargoExpress.CRUD.Querys._QTipoPersona;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +25,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// EndPoint encargado de crear un nuevo tipo persona
         /// </summary>
         /// <param name="parametros">Parametros para mediador</param>
-        /// <returns>UsuarioDto Validado</returns>
+        /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/CreateTipoPersona
         [HttpPost("CreateTipoPersona")]
@@ -31,5 +33,42 @@ namespace MCargoExpres.Api.Controllers.Persona
         {
             return await mediator.Send(parametros);
         }
+        /// <summary>
+        /// EndPoint encargado de Editar un tipo de persona
+        /// </summary>
+        /// <param name="parametros">Parametros para mediador</param>
+        /// <returns></returns>
+        /// <remarks>Francisco Rios</remarks>
+        // /api/Rol/UpdatetipoPersona
+        [HttpPut("UpdatetipoPersona")]
+        public async Task<ActionResult<Unit>> UpdateTipoPersona(UpdateTipoPersona.Ejecuta data)
+        {
+            return await mediator.Send(data);
+        }
+        /// <summary>
+        /// EndPoint encargado de listar Tipo Persona
+        /// </summary>
+        /// <param name="parametros">Parametros para mediador</param>
+        /// <returns></returns>
+        /// <remarks>Francisco Rios</remarks>
+        // /api/Rol/ObtenerTipoPersona
+        [HttpGet("ObtenerTipoPersona")]
+        public async Task<ActionResult<List<TipoPersona>>> GetTipoPersona()
+        {
+            return await mediator.Send(new ObtenerTipoPersona.Ejecuta());
+        }
+        /// <summary>
+        /// EndPoint encargado de listar Tipo Persona
+        /// </summary>
+        /// <param name="parametros">Parametros para mediador</param>
+        /// <returns></returns>
+        /// <remarks>Francisco Rios</remarks>
+        // /api/Rol/ObtenerTipoPersona
+        [HttpGet("ObtenerTipoPersona/{id}")]
+        public async Task<ActionResult<TipoPersona>> GetTipoPersonaXId(int id)
+        {
+            return await mediator.Send(new ObtenerTipoPersonaXId.Ejecuta {Id= id});
+        }
+
     }
 }

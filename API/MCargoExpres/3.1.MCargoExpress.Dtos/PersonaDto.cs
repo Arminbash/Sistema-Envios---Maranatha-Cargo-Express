@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1.MCargoExpress.Domain
+namespace _3._1.MCargoExpress.Dtos
 {
-    /// <summary>
-    /// Modelo de persona
-    /// </summary>
-    /// Francisco Rios
-    public class Persona : ClaseBase
+   public class PersonaDto
     {
-        
         /// <summary>
         /// Primer Nombre
         /// </summary>
@@ -50,14 +44,10 @@ namespace _1.MCargoExpress.Domain
         ///<summary>
         /// codigo que identifica el tipo persona
         /// </summary>
-        [ForeignKey("TipoPersona")]
         public int TipoPersonaId { get; set; }
-        ///<summary>
-        /// propiedad de navegacion de tipo persona
+        /// <summary>
+        /// Estado
         /// </summary>
-        public virtual TipoPersona TipoPersona { get; set; }
-        public virtual ICollection<Empleado> Empleado { get; set; }
-        public virtual ICollection<Cliente> Cliente { get; set; }
+        public bool Estado { get; set; }
     }
 }
-
