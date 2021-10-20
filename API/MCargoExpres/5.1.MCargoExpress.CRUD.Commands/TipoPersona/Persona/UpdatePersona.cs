@@ -1,29 +1,31 @@
-﻿using _1.MCargoExpress.Domain;
-using _2._2.MCargoExpress.Persistence.Settings;
+﻿using _2._2.MCargoExpress.Persistence.Settings;
 using _3._1.MCargoExpress.Dtos;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
+using _4.MCargoExpress.Aplication.Exceptions;
 using FluentValidation;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
+namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
 {
     /// <summary>
-    /// Mediador Crear  Persona
+    /// Mediador Update Persona
     /// </summary>
     /// Francisco Rios
-    public class CreatePersona 
+    public class UpdatePersona
     {
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest  {
-        
+        public class Ejecuta : IRequest 
+        {
+            public int Id { get; set; }
             public string PrimerNombre { get; set; }
             public string SegundoNombre { get; set; }
             public string PrimerApellido { get; set; }
@@ -31,8 +33,8 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
             public string Correo { get; set; }
             public string Cedula { get; set; }
             public string Direccion { get; set; }
-            public int Telefono { get; set; }
-            public int TipoPersonaId { get; set; }
+            public int? Telefono { get; set; }
+            public int? TipoPersonaId { get; set; }
             public bool Estado { get; set; }
         }
         public class CreateValidacion : AbstractValidator<Ejecuta>
@@ -40,7 +42,9 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
             /// <summary>
             /// Fluent Validation
             /// </summary>
-            public CreateValidacion (){
+            public CreateValidacion()
+            {
+                RuleFor(x => x.Id).NotEmpty();
                 RuleFor(x => x.PrimerNombre).NotEmpty();
                 RuleFor(x => x.SegundoNombre).NotEmpty();
                 RuleFor(x => x.PrimerApellido).NotEmpty();
@@ -58,48 +62,47 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
         /// </summary>
         public class Manejador : IRequestHandler<Ejecuta>
         {
-            private readonly IConexion context;
-            private readonly IPersonaService personaService;
+            private readonly IConexion _context;
+            private readonly IPersonaService _IpersonaServices;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
             /// <param name="context">IConexion</param>
             /// Francisco Rios
-            public Manejador(IConexion _context,IPersonaService _personaService)
+            public Manejador(IConexion context, IPersonaService personaService) 
             {
-                context = _context;
-                personaService = _personaService;
+                _context = context;
+                _IpersonaServices = personaService;
             }
-            /// <summary>
-            /// Metodo que ejecuta el contrato y devuelve la promesa
-            /// </summary>
-            /// <param name="request">Clase modelo</param>
-            /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
-            /// <returns></returns>
-            /// Franciso Rios
+
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = new PersonaDto
+                var query = await _IpersonaServices.GetPersonaPorIdAsync(request.Id);
+                if (query == null)
                 {
-                    PrimerNombre = request.PrimerNombre,
-                    SegundoNombre = request.SegundoNombre,
-                    PrimerApellido = request.PrimerApellido,
-                    SegundoApellido = request.SegundoApellido,
-                    Correo = request.Correo,
-                    Cedula = request.Cedula,
-                    Direccion = request.Direccion,
-                    Telefono = request.Telefono,
-                    TipoPersonaId = request.TipoPersonaId,
+                    throw new ExceptionBase(HttpStatusCode.BadRequest, new { Mensaje = "Persona no encontrada" });
+                }
+
+                var UpdateQuery = new PersonaDto
+                {
+                    Id = request.Id,
+                    PrimerNombre = request.PrimerNombre ?? query.PrimerNombre,
+                    SegundoNombre = request.SegundoNombre ?? query.SegundoNombre,
+                    PrimerApellido = request.PrimerApellido ?? query.PrimerApellido,
+                    SegundoApellido = request.SegundoApellido ?? query.SegundoApellido,
+                    Correo = request.Correo?? query.Correo,
+                    Cedula = request.Cedula ?? query.Cedula,
+                    Direccion = request.Direccion ?? query.Direccion,
+                    Telefono = request.Telefono ??  query.Telefono,
+                    TipoPersonaId = request.TipoPersonaId  ?? query.TipoPersonaId,
                     Estado = true
                 };
-             
-                var valor = await personaService.AddPersonaAsync(query);
-                if (valor != null)
+                var valor = await _IpersonaServices.UpdatePersonaAsync(UpdateQuery);
+                if(valor != null)
                 {
                     return Unit.Value;
                 }
-                throw new Exception("No se logro ingresar la persona");
-
+                throw new Exception("error al actualizar");
             }
         }
     }

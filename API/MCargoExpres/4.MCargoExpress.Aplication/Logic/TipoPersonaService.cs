@@ -37,7 +37,7 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// Agrega un nuevo tipo persona
         /// </summary>
         /// <param name="tipoPersona">TipoPersona</param>
-        /// <returns>Traduccion con Id</returns>
+        /// <returns>tipo persona</returns>
         /// Francisco Rios
         public async Task<TipoPersonaDto> AddTipoPersonaAsync(TipoPersonaDto tipoPersona)
         {

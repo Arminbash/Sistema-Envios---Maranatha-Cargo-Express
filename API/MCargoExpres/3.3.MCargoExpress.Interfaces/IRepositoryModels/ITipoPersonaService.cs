@@ -29,7 +29,7 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// Francisco Rios
         Task<TipoPersonaDto> UpdateTipoPersonaAsync(TipoPersonaDto tipoPersona);
         /// <summary>
-        /// Obtiene todas los tipos Persona en todos los lenguajes
+        /// Obtiene todas los tipos Persona en todos 
         /// </summary>
         /// <returns>Obtiene todas los tipos persona</returns>
         /// Francisco Rios

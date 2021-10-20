@@ -9,6 +9,10 @@ namespace _3._1.MCargoExpress.Dtos
    public class PersonaDto
     {
         /// <summary>
+        /// Primary key
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
         /// Primer Nombre
         /// </summary>
         public string PrimerNombre { get; set; }
