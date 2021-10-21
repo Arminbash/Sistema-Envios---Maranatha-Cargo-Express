@@ -58,12 +58,12 @@ namespace MCargoExpres.Api.Controllers.Persona
             return await mediator.Send(new ObtenerTipoPersona.Ejecuta());
         }
         /// <summary>
-        /// EndPoint encargado de listar Tipo Persona
+        /// EndPoint encargado de buscar un Tipo Persona por Id
         /// </summary>
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/ObtenerTipoPersona
+        // /api/Rol/ObtenerTipoPersona/Id
         [HttpGet("ObtenerTipoPersona/{id}")]
         public async Task<ActionResult<TipoPersona>> GetTipoPersonaXId(int id)
         {

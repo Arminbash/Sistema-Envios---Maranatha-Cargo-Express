@@ -74,7 +74,13 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
                 _context = context;
                 _IpersonaServices = personaService;
             }
-
+            /// <summary>
+            /// Metodo que ejecuta el contrato y devuelve la promesa
+            /// </summary>
+            /// <param name="request">Clase modelo</param>
+            /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
+            /// <returns>Promesa de persona</returns>
+            /// Franciso Rios
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = await _IpersonaServices.GetPersonaPorIdAsync(request.Id);
