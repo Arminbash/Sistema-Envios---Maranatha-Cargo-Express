@@ -25,10 +25,7 @@ namespace _2._1.MCargoExpress.Persistence.Connection
         //Constructor vacio
         public Contextos() 
         {
-            var connectionString = "Server=.;Database=MaranthaCargoExpress;Trusted_Connection=True;";
-            var optionsBuilder = new DbContextOptionsBuilder<IConexion>();
-            optionsBuilder.UseSqlServer(connectionString);
-            conMCE = new IConexion(optionsBuilder.Options);
+            conMCE = new IConexion(SingletonConexiones.optionsConexion.Options);
         }
         /// <summary>
         /// Constructor de contextos

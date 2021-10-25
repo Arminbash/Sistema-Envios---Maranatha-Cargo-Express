@@ -22,6 +22,11 @@ using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
 using _4.MCargoExpress.Aplication.Logic;
 using _2._1.MCargoExpress.Persistence.Connection;
 using _3._3.MCargoExpress.Interfaces;
+using _2._2.MCargoExpress.Persistence.Settings;
+using Microsoft.Extensions.Options;
+using Ninject;
+using System.Reflection;
+using _4.MCargoExpress.Aplication.NinjectConfig;
 
 namespace MCargoExpres.Api
 {
@@ -62,9 +67,15 @@ namespace MCargoExpres.Api
             //Configuracion de los cors
             CorsConfig.Config(Configuration, services);
 
-            services.AddScoped<IContextos, Contextos>();
             services.AddScoped<ITipoPersonaService, TipoPersonaService>();
             services.AddScoped<IPersonaService, PersonaService>();
+
+
+            //Se deshabilita temporalmente porque se configura mas adelante.
+            //StandardKernel _kernel = new StandardKernel();
+            //_kernel.Load(Assembly.GetExecutingAssembly());
+            //IContextos _objIContextos = _kernel.Get<IContextos>();
+            //NinjectBL objBL= new NinjectBL(_objIContextos);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
