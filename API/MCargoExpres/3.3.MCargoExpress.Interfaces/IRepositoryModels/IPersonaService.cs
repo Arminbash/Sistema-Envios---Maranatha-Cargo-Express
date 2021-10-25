@@ -24,7 +24,7 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// <summary>
         /// Actualiza a un persona
         /// </summary>
-        /// <param name="`tipoPersona">tipoPersona</param>
+        /// <param name="Persona">Persona</param>
         /// <returns></returns>
         /// Francisco Rios
         Task<PersonaDto> UpdatePersonaAsync(PersonaDto persona);
@@ -35,7 +35,7 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// Francisco Rios
         Task<IReadOnlyList<PersonaDto>> GetAllTipoPersonaAsync();
         /// <summary>
-        /// Obtiene una persona persona por Id
+        /// Obtiene una  persona por Id
         /// </summary>
         /// <param name="IdPersona">IdTipoPersona</param>
         /// <returns>Retorna una persona</returns>

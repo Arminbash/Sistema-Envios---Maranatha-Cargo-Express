@@ -65,6 +65,7 @@ namespace MCargoExpres.Api
             services.AddScoped<IContextos, Contextos>();
             services.AddScoped<ITipoPersonaService, TipoPersonaService>();
             services.AddScoped<IPersonaService, PersonaService>();
+            services.AddScoped<IEmpleadoService, EmpleadoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

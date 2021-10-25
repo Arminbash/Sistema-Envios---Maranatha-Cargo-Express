@@ -1,8 +1,6 @@
 ﻿using _3._1.MCargoExpress.Dtos;
-using _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona;
-using _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona;
-using _5._2.MCargoExpress.CRUD.Querys._TipoPersona._Persona;
-using _5._2.MCargoExpress.CRUD.Querys._TipoPersona._Personas;
+using _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Empleado;
+using _5._2.MCargoExpress.CRUD.Querys._TipoPersona.Empleado;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,55 +19,57 @@ namespace MCargoExpres.Api.Controllers.Persona
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles = "Admin")]
-    public class PersonaController : ControllerBaseMediator
+    public class EmpeladoController : ControllerBaseMediator
     {
         /// <summary>
-        /// EndPoint encargado de crear a una persona
+        /// EndPoint encargado de crear un Empelado
         /// </summary>
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/CreatePersona
-        [HttpPost("CreatePersona")]
-        public async Task<ActionResult<Unit>> CreateTipoPersona(CreatePersona.Ejecuta parametros)
+        // /api/Rol/CreateEmpleado
+        [HttpPost("CreateEmpleado")]
+        public async Task<ActionResult<Unit>> CreateTipoPersona(CreateEmpleado.Ejecuta parametros)
         {
             return await mediator.Send(parametros);
         }
         /// <summary>
-        /// EndPoint encargado de una persona
+        /// EndPoint encargado de un Empleado
         /// </summary>
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/UpdatePersona
-        [HttpPut("UpdatePersona")]
-        public async Task<ActionResult<Unit>> UpdateTipoPersona(UpdatePersona.Ejecuta data)
+        // /api/Empleado/updateEmpleado
+        [HttpPut("UpdateEmpleado")]
+        public async Task<ActionResult<Unit>> UpdateTipoPersona(UpdateEmpleado.Ejecuta data)
         {
             return await mediator.Send(data);
         }
         /// <summary>
-        /// EndPoint encargado de listar  Persona
+        /// EndPoint encargado de listar los Empleados
         /// </summary>
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/ObtenerPersona
-        [HttpGet("ObtenerPersona")]
-        public async Task<ActionResult<List<PersonaDto>>> GetPersona()
+        // /api/Empleado/ObtenerPersona
+        [HttpGet("ObtenerEmpleado")]
+        public async Task<ActionResult<List<EmpleadoDto>>> GetPersona()
         {
-            return await mediator.Send(new ObtenerPersona.Ejecuta());
+            return await mediator.Send(new ObtenerEmpleado.Ejecuta());
         }
         /// <summary>
-        /// EndPoint encargado de buscar una  Persona por Id
+        /// EndPoint encargado de buscar un Empleado por Id
         /// </summary>
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/ObtenerPersona
-        [HttpGet("ObtenerPersona/{id}")]
-        public async Task<ActionResult<PersonaDto>> GetPersonaXId(int id)
+        // /api/Empleado/ObtenerEmpleado
+        [HttpGet("ObtenerEmpleado/{id}")]
+        public async Task<ActionResult<EmpleadoDto>> GetPersonaXId(int id)
         {
-            return await mediator.Send(new ObtenerPersonaXId.Ejecuta { Id = id });
+            return await mediator.Send(new ObtenerEmpleadoPorId.Ejecuta { Id = id });
+
+
         }
     }
 }
