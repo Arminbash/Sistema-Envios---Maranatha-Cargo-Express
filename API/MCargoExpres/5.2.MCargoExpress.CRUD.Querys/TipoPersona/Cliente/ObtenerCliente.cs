@@ -8,50 +8,50 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona_._TipoCliente
+namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Empleado
 {
     /// <summary>
-    /// Mediador para lista de Tipo cliente
+    /// Mediador para lista de Cliente
     /// </summary>
     /// Francisco Rios
-    public class ObtenerTipoCliente
+    public class ObtenerCliente
     {
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
         /// Francisco Rios
-        public class Ejecuta : IRequest<List<TipoClienteDto>>
+        public class Ejecuta : IRequest<List<ClienteDto>>
         {
         }
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
         /// Francisco Rios
-        public class Manejador : IRequestHandler<Ejecuta, List<TipoClienteDto>>
+        public class Manejador : IRequestHandler<Ejecuta, List<ClienteDto>>
         {
-            
-            private readonly ITipoClienteService ItipoClienteService;
+            private readonly IClienteService clienteService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="ItipoClienteService">Contexto Base</param>
+            /// <param name="clienteService"></param>
             /// Francisco Rios
-            public Manejador(ITipoClienteService _ItipoClienteService)
+            public Manejador(IClienteService _clienteService)
             {
-                ItipoClienteService = _ItipoClienteService;
+                clienteService = _clienteService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
             /// </summary>
             /// <param name="request">Clase modelo</param>
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
-            /// <returns>Lista de Tipo Persona</returns>
+            /// <returns>Lista de Tipo Cliente</returns>
             /// Francisco Rios
-            public async Task<List<TipoClienteDto>> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<List<ClienteDto>> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await ItipoClienteService.GetAllTipoClienteAsync();
+                var query = await clienteService.GetAllClientesAsync();
                 return query.ToList();
             }
         }
+
     }
 }

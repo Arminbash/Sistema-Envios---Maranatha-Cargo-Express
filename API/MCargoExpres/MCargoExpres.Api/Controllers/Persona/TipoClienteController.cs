@@ -1,5 +1,6 @@
 ﻿using _3._1.MCargoExpress.Dtos;
 using _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente;
+using _5._2.MCargoExpress.CRUD.Querys._TipoPersona_._TipoCliente;
 using _5._2.MCargoExpress.CRUD.Querys.TipoPersona_.TipoCliente;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

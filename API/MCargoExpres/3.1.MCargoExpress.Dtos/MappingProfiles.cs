@@ -25,7 +25,6 @@ namespace _3._1.MCargoExpress.Dtos
             CreateMap<Empleado, EmpleadoDto>().ReverseMap();
             CreateMap<TipoCliente, TipoClienteDto>().ReverseMap();
             CreateMap<Cliente, ClienteDto>().ReverseMap();
-            CreateMap<Traduccion, TraduccionDto>().ReverseMap();
         }
     }
 }

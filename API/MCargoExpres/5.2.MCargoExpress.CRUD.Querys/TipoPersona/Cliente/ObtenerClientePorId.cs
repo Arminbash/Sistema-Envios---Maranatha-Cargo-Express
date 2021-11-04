@@ -1,56 +1,63 @@
 ﻿using _3._1.MCargoExpress.Dtos;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
+using _4.MCargoExpress.Aplication.Exceptions;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona_._TipoCliente
+namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente
 {
     /// <summary>
-    /// Mediador para lista de Tipo cliente
+    /// Mediador Obtiene los Cliente por Id
     /// </summary>
     /// Francisco Rios
-    public class ObtenerTipoCliente
+    public class ObtenerClientePorId
     {
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
         /// Francisco Rios
-        public class Ejecuta : IRequest<List<TipoClienteDto>>
+        public class Ejecuta : IRequest<ClienteDto>
         {
+            public int Id { get; set; }
         }
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
         /// Francisco Rios
-        public class Manejador : IRequestHandler<Ejecuta, List<TipoClienteDto>>
+        public class Manejador : IRequestHandler<Ejecuta, ClienteDto>
         {
-            
-            private readonly ITipoClienteService ItipoClienteService;
+            private readonly IClienteService clienteService;
+
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="ItipoClienteService">Contexto Base</param>
+            /// <param name="clienteService">Contexto Base</param>
             /// Francisco Rios
-            public Manejador(ITipoClienteService _ItipoClienteService)
+            public Manejador(IClienteService _clienteService)
             {
-                ItipoClienteService = _ItipoClienteService;
+                clienteService = _clienteService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
             /// </summary>
             /// <param name="request">Clase modelo</param>
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
-            /// <returns>Lista de Tipo Persona</returns>
+            /// <returns>Cliente</returns>
             /// Francisco Rios
-            public async Task<List<TipoClienteDto>> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<ClienteDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await ItipoClienteService.GetAllTipoClienteAsync();
-                return query.ToList();
+                var query = clienteService.GetClientePorIdAsync(request.Id);
+                if (query == null)
+                {
+                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el Tipo Perosna" });
+                }
+                return await query;
             }
         }
     }
