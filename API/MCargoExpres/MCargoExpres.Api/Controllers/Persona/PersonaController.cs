@@ -65,7 +65,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/ObtenerTipoPersona
+        // /api/Rol/ObtenerPersona
         [HttpGet("ObtenerPersona/{id}")]
         public async Task<ActionResult<PersonaDto>> GetPersonaXId(int id)
         {

@@ -101,7 +101,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
                     Direccion = request.Direccion ?? query.Direccion,
                     Telefono = request.Telefono ??  query.Telefono,
                     TipoPersonaId = request.TipoPersonaId  ?? query.TipoPersonaId,
-                    Estado = true
+                    Estado = request.Estado
                 };
                 var valor = await _IpersonaServices.UpdatePersonaAsync(UpdateQuery);
                 if(valor != null)

@@ -20,8 +20,8 @@ namespace _2._1.MCargoExpress.Persistence.Connection
         /// </summary>
         public static DbContextOptionsBuilder optionsConexion;
         /// <summary>
-        /// Conexion Dapper a la base de datos MCE
+        /// Conexion con la base de datos MCE
         /// </summary>
-        public static IOptions<DapperConnectionConfig> optionsDapperconexion;
+        public static string ConnectionString;
     }
 }

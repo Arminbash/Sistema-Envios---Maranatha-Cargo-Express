@@ -69,7 +69,10 @@ namespace MCargoExpres.Api
 
             services.AddScoped<ITipoPersonaService, TipoPersonaService>();
             services.AddScoped<IPersonaService, PersonaService>();
-
+            services.AddScoped<IEmpleadoService, EmpleadoService>();
+            services.AddScoped<ITipoClienteService, TipoClienteService>();
+            services.AddScoped<ITraduccionService, TraduccionService>();
+            services.AddScoped<IClienteService, ClienteService>();
 
             //Se deshabilita temporalmente porque se configura mas adelante.
             //StandardKernel _kernel = new StandardKernel();

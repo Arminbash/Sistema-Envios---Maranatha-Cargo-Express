@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
 {
     /// <summary>
-    /// Mediador Crear  Persona
+    /// Mediador Crear  Cliente
     /// </summary>
     /// Francisco Rios
     public class CreatePersona 

@@ -13,8 +13,12 @@
         "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\1.MCargoExpress.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +89,12 @@
         "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.2.MCargoExpress.Persistence.Settings\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -192,8 +200,12 @@
         "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\2.3.MCargoExpress.Persistence.SqlServer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -283,8 +295,12 @@
         "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.1.MCargoExpress.Dtos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -359,8 +375,12 @@
         "packagesPath": "C:\\Users\\Arminbash\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Arminbash\\Documents\\GitHub\\Sistema-Envios---Maranatha-Cargo-Express\\API\\MCargoExpres\\3.3.MCargoExpress.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Arminbash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
