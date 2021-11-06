@@ -74,7 +74,6 @@ namespace MCargoExpres.Api
             services.AddScoped<ITraduccionService, TraduccionService>();
             services.AddScoped<IClienteService, ClienteService>();
 
-
             //Se deshabilita temporalmente porque se configura mas adelante.
             //StandardKernel _kernel = new StandardKernel();
             //_kernel.Load(Assembly.GetExecutingAssembly());

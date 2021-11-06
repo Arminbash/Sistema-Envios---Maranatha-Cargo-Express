@@ -26,6 +26,7 @@ namespace _2._1.MCargoExpress.Persistence.Connection
         public Contextos() 
         {
             conMCE = new IConexion(SingletonConexiones.optionsConexion.Options);
+            conDapper = new DapperConnection();
         }
         /// <summary>
         /// Constructor de contextos
