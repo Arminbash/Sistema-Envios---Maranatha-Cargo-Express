@@ -31,6 +31,8 @@ namespace MCargoExpres.Api
                 //Se obtiene la ruta del contexto por medio de su NameSpace --MCargoExpress.Persistence.Mysql
                 string assemblyName = typeof(ConexionMysql).Namespace;
                 string mySqlConnectionStr = Configuration.GetConnectionString("mysqlConnection");
+                //Se inicializa las conexiones globales
+                SingletonConexiones.optionsConexion = new DbContextOptionsBuilder<IConexion>().UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr));
                 services.AddDbContextPool<IConexion>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr),
                     //Se configura la ruta de migraciones por defecto en este conexto
                     optionsBuilder =>
@@ -43,12 +45,15 @@ namespace MCargoExpres.Api
                 //Se obtiene la ruta del contexto por medio de su NameSpace --MCargoExpress.Persistence.SqlServer
                 string assemblyName = typeof(ConexionSqlServer).Namespace;
                 string sqlServerConnectionStr = Configuration.GetConnectionString("sqlServerConnection");
+                //Se inicializa las conexiones globales
+                SingletonConexiones.optionsConexion = new DbContextOptionsBuilder<IConexion>().UseSqlServer(sqlServerConnectionStr);
                 services.AddDbContextPool<IConexion>(options => options.UseSqlServer(sqlServerConnectionStr,
                     //Se configura la ruta de migraciones por defecto en este conexto
                     optionsBuilder =>
                         optionsBuilder.MigrationsAssembly(assemblyName)
                     ));
             }
+            
         }
     }
 }
