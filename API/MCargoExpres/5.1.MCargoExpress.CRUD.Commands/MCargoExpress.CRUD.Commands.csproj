@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>_5._1.MCargoExpress.CRUD.Commands</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\1.MCargoExpress.Domain\MCargoExpress.Domain.csproj" />
+    <ProjectReference Include="..\2.2.MCargoExpress.Persistence.Settings\MCargoExpress.Persistence.Settings.csproj" />
+    <ProjectReference Include="..\3.1.MCargoExpress.Dtos\MCargoExpress.Dtos.csproj" />
+    <ProjectReference Include="..\4.MCargoExpress.Aplication\MCargoExpress.Aplication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.3" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.9" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
+  </ItemGroup>
+
+</Project>
