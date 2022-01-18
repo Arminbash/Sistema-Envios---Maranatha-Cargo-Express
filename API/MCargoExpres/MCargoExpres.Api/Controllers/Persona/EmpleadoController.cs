@@ -15,11 +15,10 @@ namespace MCargoExpres.Api.Controllers.Persona
     /// Controller que se encarga de la manipulacion de persona
     /// </summary>
     /// Francisco Rios
-    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
-    public class EmpeladoController : ControllerBaseMediator
+    [Authorize]
+    public class EmpleadoController : ControllerBaseMediator
     {
         /// <summary>
         /// EndPoint encargado de crear un Empelado

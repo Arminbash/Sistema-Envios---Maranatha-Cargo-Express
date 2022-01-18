@@ -15,10 +15,9 @@ namespace MCargoExpres.Api.Controllers.Login.Rol
     /// Controller que se encarga de la manipulacion de los roles de usuario
     /// </summary>
     /// Francisco Rios
-    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
 
     public class RolController : ControllerBaseMediator
     {

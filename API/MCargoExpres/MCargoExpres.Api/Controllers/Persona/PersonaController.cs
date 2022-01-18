@@ -17,10 +17,9 @@ namespace MCargoExpres.Api.Controllers.Persona
     /// Controller que se encarga de la manipulacion de persona
     /// </summary>
     /// Francisco Rios
-    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class PersonaController : ControllerBaseMediator
     {
         /// <summary>

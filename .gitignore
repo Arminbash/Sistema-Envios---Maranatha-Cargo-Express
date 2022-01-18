@@ -458,3 +458,8 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+API/MCargoExpres/1.MCargoExpress.Domain/obj/
+API/MCargoExpres/2.1.MCargoExpress.Persistence.Connection/obj/
+API/MCargoExpres/2.2.MCargoExpress.Persistence.Settings/obj/
+API/MCargoExpres/2.3.MCargoExpress.Persistence.SqlServer/obj/
+API/MCargoExpres/1.MCargoExpress.Domain/obj/
