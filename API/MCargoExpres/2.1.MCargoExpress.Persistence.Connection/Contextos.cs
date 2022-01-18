@@ -2,6 +2,7 @@
 using _3._2.MCargoExpress.Enums;
 using _3._3.MCargoExpress.Interfaces;
 using MCargoExpress.Persistence.Mysql;
+using MCargoExpress.Persistence.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,16 @@ namespace _2._1.MCargoExpress.Persistence.Connection
     /// Clase Factory de Contextos
     /// </summary>
     /// Johnny Arcia
-    public class Contextos : IDisposable
+    public class Contextos : IDisposable , IContextos
     {
         private IConexion conMCE; //Conexion con la base de datos Maranatha Cargo Express
         private IDapperConnection conDapper; //Conexion con la base de datos por medio de Dapper
         private UnitOfWork unitOfWork; //Unit of work
         //Constructor vacio
-        public Contextos()
+        public Contextos() 
         {
+            conMCE = new IConexion(SingletonConexiones.optionsConexion.Options);
+            conDapper = new DapperConnection();
         }
         /// <summary>
         /// Constructor de contextos

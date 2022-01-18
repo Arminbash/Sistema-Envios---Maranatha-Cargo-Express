@@ -2,6 +2,7 @@
 using _3._3.MCargoExpress.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,9 @@ namespace MCargoExpres.Api.Configuration
         {
             //Agregar el Dapper
             services.Configure<DapperConnectionConfig>(Configuration.GetSection("ConnectionStrings"));
+            //Configuramos las conexiones de dapper
+            //SingletonConexiones.optionsDapperconexion.Value.mysqlConnection = Configuration.GetConnectionString("mysqlConnection");
+            //SingletonConexiones.optionsDapperconexion.Value.sqlServerConnection = Configuration.GetConnectionString("sqlServerConnection");
             services.AddTransient<IDapperConnection, DapperConnection>();
         }
     }

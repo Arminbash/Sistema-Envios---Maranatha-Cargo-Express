@@ -1,4 +1,5 @@
 ﻿using _3._1.MCargoExpress.Dtos;
+using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
 using _5._1.MCargoExpress.CRUD.Commands.Login;
 using _5._2.MCargoExpress.CRUD.Querys.Login;
 using Microsoft.AspNetCore.Authorization;
@@ -17,7 +18,7 @@ namespace MCargoExpres.Api.Controllers.Login
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBaseMediator
+    public class UsuarioController : ControllerBaseMediator 
     {
         /// <summary>
         /// EndPoint encargado de los ingresos del usuario

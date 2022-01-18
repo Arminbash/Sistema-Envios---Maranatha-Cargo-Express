@@ -20,6 +20,11 @@ namespace _3._1.MCargoExpress.Dtos
         public MappingProfiles()
         {
             CreateMap<Traduccion, TraduccionDto>().ReverseMap();
+            CreateMap<TipoPersona, TipoPersonaDto>().ReverseMap();
+            CreateMap<Persona, PersonaDto>().ReverseMap();
+            CreateMap<Empleado, EmpleadoDto>().ReverseMap();
+            CreateMap<TipoCliente, TipoClienteDto>().ReverseMap();
+            CreateMap<Cliente, ClienteDto>().ReverseMap();
         }
     }
 }

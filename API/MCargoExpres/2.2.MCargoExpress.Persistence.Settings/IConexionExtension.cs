@@ -18,6 +18,18 @@ namespace _2._2.MCargoExpress.Persistence.Settings
         }
         //Lista de tablas
         public virtual DbSet<Traduccion> Traduccion { get; set; }
+        public virtual DbSet<Persona> Persona { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Configuraciones> Configuraciones { get; set; }
+        public virtual DbSet<Cotizacion> Cotizacion { get; set; }
+        public virtual DbSet<DetalleCotizacion> DetalleCotizacion { get; set; }
+        public virtual DbSet<DetalleFactura> DetalleFactura { get; set; }
+        public virtual DbSet<Empleado> Empleado { get; set; }
+        public virtual DbSet<Envia> Envia { get; set; }
+        public virtual DbSet<Factura> Factura { get; set; }
+        public virtual DbSet<Recibe> Recibe { get; set; }
+        public virtual DbSet<TipoCliente> TipoCliente { get; set; }
+        public virtual DbSet<TipoPersona> TipoPersona { get; set; }
 
         /// <summary>
         /// Sobreescritura del model creating
