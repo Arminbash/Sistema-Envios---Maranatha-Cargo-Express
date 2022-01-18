@@ -19,7 +19,7 @@ namespace MCargoExpres.Api.Controllers.Persona
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles = "Admin")]
-    public class EmpeladoController : ControllerBaseMediator
+    public class EmpleadoController : ControllerBaseMediator
     {
         /// <summary>
         /// EndPoint encargado de crear un Empelado
