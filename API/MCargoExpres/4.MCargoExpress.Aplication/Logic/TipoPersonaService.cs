@@ -46,6 +46,7 @@ namespace _4.MCargoExpress.Aplication.Logic
                 var repository = _unitOfWork.Repository<TipoPersona>();
                 TipoPersona newTipoPersona = new TipoPersona();
                 mapper.Map(tipoPersona,newTipoPersona);
+                newTipoPersona.Estado = true;
                 repository.AddEntity(newTipoPersona);
                 await _unitOfWork.Complete();
                 return tipoPersona;
@@ -56,12 +57,12 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// </summary>
         /// <returns>Obtiene todas los tipo de persona</returns>
         /// Francisco Rios
-        public async Task<IReadOnlyList<TipoPersona>> GetAllTipoPersonaAsync()
+        public async Task<IReadOnlyList<TipoPersonaDto>> GetAllTipoPersonaAsync()
         {
             using (var _unitOfWork = new Contextos().GetUnitOfWork())
             {
                 var tipoPersona = await _unitOfWork.Repository<TipoPersona>().GetAllAsync();
-                return mapper.Map<List<TipoPersona>, List<TipoPersona>>(tipoPersona.ToList());
+                return mapper.Map<List<TipoPersona>, List<TipoPersonaDto>>(tipoPersona.ToList());
             }
         }
         /// <summary>
@@ -70,13 +71,13 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// <param name="Id">Id Tipo Persona/param>
         /// <returns>Retorna la tipo de persona por Id</returns>
         /// Francisco Rios
-        public async Task<TipoPersona> GetTipoPersonaPorIdAsync(int IdTipoPersona)
+        public async Task<TipoPersonaDto> GetTipoPersonaPorIdAsync(int IdTipoPersona)
         {
             using (var _unitOfWork = new Contextos().GetUnitOfWork())
             {
                 var query = new Specifications.BaseSpecification<TipoPersona>(x => x.Id == IdTipoPersona);
                 var tipoPersona = await _unitOfWork.Repository<TipoPersona>().GetByIdWithSpec(query);
-                return mapper.Map<TipoPersona, TipoPersona>(tipoPersona);
+                return mapper.Map<TipoPersona, TipoPersonaDto>(tipoPersona);
             }
         }
         /// <summary>

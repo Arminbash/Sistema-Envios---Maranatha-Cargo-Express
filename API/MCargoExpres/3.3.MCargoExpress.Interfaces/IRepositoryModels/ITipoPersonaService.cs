@@ -33,14 +33,14 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// </summary>
         /// <returns>Obtiene todas los tipos persona</returns>
         /// Francisco Rios
-        Task<IReadOnlyList<TipoPersona>> GetAllTipoPersonaAsync();
+        Task<IReadOnlyList<TipoPersonaDto>> GetAllTipoPersonaAsync();
         /// <summary>
         /// Obtiene el tipo de persona
         /// </summary>
         /// <param name="IdTipoPersona">IdTipoPersona</param>
         /// <returns>Retorna la traduccion que contienen la clave</returns>
         /// Francisco Rios
-        Task<TipoPersona> GetTipoPersonaPorIdAsync(int IdTipoPersona);
+        Task<TipoPersonaDto> GetTipoPersonaPorIdAsync(int IdTipoPersona);
 
     }
 }

@@ -1,4 +1,4 @@
-﻿using _1.MCargoExpress.Domain;
+﻿using _3._1.MCargoExpress.Dtos;
 using _5._1.MCargoExpress.CRUD.Commands._TipoPersona;
 using _5._2.MCargoExpress.CRUD.Querys._QTipoPersona;
 using MediatR;
@@ -52,7 +52,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/ObtenerTipoPersona
         [HttpGet("ObtenerTipoPersona")]
-        public async Task<ActionResult<List<TipoPersona>>> GetTipoPersona()
+        public async Task<ActionResult<List<TipoPersonaDto>>> GetTipoPersona()
         {
             return await mediator.Send(new ObtenerTipoPersona.Ejecuta());
         }
@@ -64,7 +64,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/ObtenerTipoPersona/Id
         [HttpGet("ObtenerTipoPersona/{id}")]
-        public async Task<ActionResult<TipoPersona>> GetTipoPersonaXId(int id)
+        public async Task<ActionResult<TipoPersonaDto>> GetTipoPersonaXId(int id)
         {
             return await mediator.Send(new ObtenerTipoPersonaXId.Ejecuta {Id= id});
         }

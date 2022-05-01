@@ -1,5 +1,5 @@
-﻿using _1.MCargoExpress.Domain;
-using _2._2.MCargoExpress.Persistence.Settings;
+﻿using _2._2.MCargoExpress.Persistence.Settings;
+using _3._1.MCargoExpress.Dtos;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
 using _4.MCargoExpress.Aplication.Exceptions;
 using MediatR;
@@ -23,7 +23,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys._QTipoPersona
         /// Parametros para el contrato
         /// </summary>
         /// Francisco Rios
-        public class Ejecuta : IRequest<TipoPersona>
+        public class Ejecuta : IRequest<TipoPersonaDto>
         {
            public int Id { get; set; }
         }
@@ -31,7 +31,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys._QTipoPersona
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
         /// Francisco Rios
-        public class Manejador : IRequestHandler<Ejecuta, TipoPersona>
+        public class Manejador : IRequestHandler<Ejecuta, TipoPersonaDto>
         {
             private readonly IConexion context;
             private readonly ITipoPersonaService _ItipoPersonaServices;
@@ -52,7 +52,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys._QTipoPersona
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns>Tipo Persona</returns>
             /// Francisco Rios
-            public async Task<TipoPersona> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<TipoPersonaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = await _ItipoPersonaServices.GetTipoPersonaPorIdAsync(request.Id);
                 if (query == null)
