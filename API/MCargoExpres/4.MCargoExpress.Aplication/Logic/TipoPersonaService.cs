@@ -1,6 +1,8 @@
 ﻿using _1.MCargoExpress.Domain;
 using _2._1.MCargoExpress.Persistence.Connection;
 using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
+using _3._2.MCargoExpress.Enums;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
 using AutoMapper;
 using System;
@@ -53,9 +55,9 @@ namespace _4.MCargoExpress.Aplication.Logic
             }
         }
         /// <summary>
-        /// Obtiene todas los Tipo de persona
+        /// Obtiene todos los Tipo de persona
         /// </summary>
-        /// <returns>Obtiene todas los tipo de persona</returns>
+        /// <returns>Lista tipo de persona</returns>
         /// Francisco Rios
         public async Task<IReadOnlyList<TipoPersonaDto>> GetAllTipoPersonaAsync()
         {
@@ -68,7 +70,7 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// <summary>
         /// Obtiene el tipo de persona por Id
         /// </summary>
-        /// <param name="Id">Id Tipo Persona/param>
+        /// <param name="IdTipoPersona">Id Tipo Persona/param>
         /// <returns>Retorna la tipo de persona por Id</returns>
         /// Francisco Rios
         public async Task<TipoPersonaDto> GetTipoPersonaPorIdAsync(int IdTipoPersona)
@@ -81,9 +83,9 @@ namespace _4.MCargoExpress.Aplication.Logic
             }
         }
         /// <summary>
-        /// Actualiza el tipo de persona por Id
+        /// Actualiza el tipo de persona
         /// </summary>
-        /// <param name="Id">Id Tipo Persona/param>
+        /// <param name="tipoPersona">Objeto Tipo Persona/param>
         /// <returns></returns>
         /// Francisco Rios
         public async Task<TipoPersonaDto> UpdateTipoPersonaAsync(TipoPersonaDto tipoPersona)
@@ -98,5 +100,41 @@ namespace _4.MCargoExpress.Aplication.Logic
                 return tipoPersona;
             }
         }
+        /// <summary>
+        /// Obtiene la lista de tipo personas paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con los datos de paginacion</param>
+        /// <returns>Retorna los tipo persona paginados</returns>
+        /// Johnny Arcia
+        public async Task<PaginationRequestBase<TipoPersonaDto>> GetTipoPersonaPaginadoAsync(PaginationDto pagination)
+        {
+            using (var _unitOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<TipoPersona>(x => (pagination.generalSearch == null || x.Tipo.Contains(pagination.generalSearch)) && (pagination.Estado == null || x.Estado == pagination.Estado));
+                var totalData = await _unitOfWork.Repository<TipoPersona>().CountAsync(query);
+
+                if (pagination.sort == SortEnum.desc) query.AddOrderByDescending(x => x.Id);
+                else query.AddOrderBy(x => x.Id);
+
+                query.ApplyPaging(pagination.perpage * (pagination.page - 1), pagination.perpage);
+
+                var listTipoPersona = await _unitOfWork.Repository<TipoPersona>().GetAllWithSpec(query);
+                var request = new PaginationRequestBase<TipoPersonaDto>
+                {
+                    meta = new PaginationMetadataBase
+                    {
+                        page = pagination.page,
+                        field = pagination.field,
+                        pages = (totalData + pagination.perpage - 1) / pagination.perpage,
+                        perpage = pagination.perpage,
+                        sort = pagination.sort,
+                        total = totalData
+                    },
+                    data = mapper.Map<List<TipoPersona>, List<TipoPersonaDto>>(listTipoPersona.ToList())
+                };
+                return request;
+            }
+        }
+
     }
 }

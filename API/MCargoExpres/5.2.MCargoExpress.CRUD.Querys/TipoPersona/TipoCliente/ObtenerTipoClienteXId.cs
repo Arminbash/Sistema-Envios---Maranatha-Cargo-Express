@@ -12,7 +12,11 @@ using System.Threading.Tasks;
 
 namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona_.TipoCliente
 {
-  public  class ObtenerTipoClienteXId
+    /// <summary>
+    /// Mediador que obtiene el tipo de cliente por id
+    /// </summary>
+    /// Francisco Rios
+    public class ObtenerTipoClienteXId
     {
         /// <summary>
         /// Parametros para el contrato
@@ -29,15 +33,15 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona_.TipoCliente
         public class Manejador : IRequestHandler<Ejecuta, TipoClienteDto>
         {
           
-            private readonly ITipoClienteService ItipoClienteService;
+            private readonly ITipoClienteService tipoClienteService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="_ItipoClienteServices">Contexto Base</param>
+            /// <param name="_ItipoClienteServices">Service de tipo cliente</param>
             /// Francisco Rios
             public Manejador(ITipoClienteService _ItipoClienteServices)
             {
-                ItipoClienteService = _ItipoClienteServices;
+                tipoClienteService = _ItipoClienteServices;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -48,10 +52,10 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona_.TipoCliente
             /// Francisco Rios
             public async Task<TipoClienteDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await ItipoClienteService.GetTipoClientePorIdAsync(request.Id);
+                var query = await tipoClienteService.GetTipoClientePorIdAsync(request.Id);
                 if (query == null)
                 {
-                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el Tipo Perosna" });
+                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el Tipo cliente" });
                 }
                 return query;
             }

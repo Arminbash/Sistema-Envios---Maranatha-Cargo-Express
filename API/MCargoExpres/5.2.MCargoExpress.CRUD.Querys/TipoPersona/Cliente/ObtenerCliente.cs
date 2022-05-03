@@ -33,7 +33,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Empleado
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="clienteService"></param>
+            /// <param name="_clienteService">Service de cliente</param>
             /// Francisco Rios
             public Manejador(IClienteService _clienteService)
             {

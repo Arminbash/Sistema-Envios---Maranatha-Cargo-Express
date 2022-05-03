@@ -20,7 +20,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Traducciones
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest
+        public class Ejecuta : IRequest<TraduccionDto>
         {
             public string Llave { get; set; }
 
@@ -49,7 +49,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Traducciones
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta,TraduccionDto>
         {
            
             private readonly ITraduccionService _ITraduccionService;
@@ -73,7 +73,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Traducciones
             /// <returns>Promesa de Traduccion</returns>
             /// Franciso Rios
 
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<TraduccionDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = new TraduccionDto
                 {
@@ -87,7 +87,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Traducciones
                 var valor = await _ITraduccionService.AddTraduccionAsync(query);
                 if (valor != null)
                 {
-                    return Unit.Value;
+                    return valor;
                 }
                 throw new Exception("No crear el tipo persona");
             }

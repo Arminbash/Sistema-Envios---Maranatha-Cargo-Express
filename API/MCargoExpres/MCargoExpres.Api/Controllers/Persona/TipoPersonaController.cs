@@ -1,6 +1,8 @@
 ﻿using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
 using _5._1.MCargoExpress.CRUD.Commands._TipoPersona;
 using _5._2.MCargoExpress.CRUD.Querys._QTipoPersona;
+using _5._2.MCargoExpress.CRUD.Querys.TipoPersona;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +30,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/CreateTipoPersona
         [HttpPost("CreateTipoPersona")]
-        public async Task<ActionResult<Unit>> CreateTipoPersona(CreateTipoPersona.Ejecuta parametros)
+        public async Task<ActionResult<TipoPersonaDto>> CreateTipoPersona(CreateTipoPersona.Ejecuta parametros)
         {
             return await mediator.Send(parametros);
         }
@@ -40,14 +42,13 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/UpdatetipoPersona
         [HttpPut("UpdatetipoPersona")]
-        public async Task<ActionResult<Unit>> UpdateTipoPersona(UpdateTipoPersona.Ejecuta data)
+        public async Task<ActionResult<TipoPersonaDto>> UpdateTipoPersona(UpdateTipoPersona.Ejecuta parametros)
         {
-            return await mediator.Send(data);
+            return await mediator.Send(parametros);
         }
         /// <summary>
         /// EndPoint encargado de listar Tipo Persona
         /// </summary>
-        /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/ObtenerTipoPersona
@@ -59,7 +60,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <summary>
         /// EndPoint encargado de buscar un Tipo Persona por Id
         /// </summary>
-        /// <param name="parametros">Parametros para mediador</param>
+        /// <param name="id">Id del tipo persona</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/ObtenerTipoPersona/Id
@@ -67,6 +68,18 @@ namespace MCargoExpres.Api.Controllers.Persona
         public async Task<ActionResult<TipoPersonaDto>> GetTipoPersonaXId(int id)
         {
             return await mediator.Send(new ObtenerTipoPersonaXId.Ejecuta {Id= id});
+        }
+        /// <summary>
+        /// EndPoint que obtiene los tipos de personas paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con datos de paginación</param>
+        /// <returns></returns>
+        /// <remarks>Johnny Arcia</remarks>
+        /// /api/TipoPersona/ObtenerTipoPersonaPaginado
+        [HttpPost("ObtenerTipoPersonaPaginado")]
+        public async Task<ActionResult<PaginationRequestBase<TipoPersonaDto>>> GetTipoPersonaPaginado(PaginationDto pagination)
+        {
+            return await mediator.Send(new ObtenerTipoPersonaPaginado.Ejecuta { pagination= pagination});
         }
 
     }

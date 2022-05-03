@@ -4,8 +4,6 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace _4.MCargoExpress.Aplication.Middleware
@@ -14,7 +12,7 @@ namespace _4.MCargoExpress.Aplication.Middleware
     /// MiddleWare base de errores
     /// </summary>
     /// Johnny Arcia
-    public class ErrorMiddleware
+    public class ErrorMiddleware : IMiddleware
     {
         private readonly RequestDelegate next;
         private readonly ILogger<ErrorMiddleware> logger;
@@ -29,13 +27,21 @@ namespace _4.MCargoExpress.Aplication.Middleware
             next = _next;
             logger = _logger;
         }
+
+        /// <summary>
+        /// Contructor para injeccion de dependencias
+        /// </summary>
+        /// <param name="_logger">Manejador de errores</param>
+        /// Johnny Arcia
+        public ErrorMiddleware(ILogger<ErrorMiddleware> _logger) => logger = _logger;
+
         /// <summary>
         /// Metodo publico con el que se dispara la excepcion
         /// </summary>
         /// <param name="context">Contexto del status http</param>
         /// <returns>Retorna una tarea async</returns>
         /// Johnny Arcia
-        public async Task Invoke(HttpContext context)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
@@ -44,10 +50,33 @@ namespace _4.MCargoExpress.Aplication.Middleware
             }
             catch (Exception ex)
             {
+                logger.LogError(ex, ex.Message);
                 //Si ocurre un error se dispara una nueva tarea con el error del middleware
                 await ManejadorExceptionAsincrono(context, ex, logger);
             }
         }
+
+        /// <summary>
+        /// Metodo publico con el que se dispara la excepcion
+        /// </summary>
+        //// <param name="context">Contexto del status http</param>
+        /// <param name="next">Nuevo request</param>
+        /// <returns>Retorna una tarea async</returns>
+        /// Johnny Arcia
+        public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+        {
+            try
+            {
+                await next(context);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, ex.Message);
+
+                await ManejadorExceptionAsincrono(context, ex, logger);
+            }
+        }
+
         /// <summary>
         /// Metodo encargado de generar y manejar las excepciones
         /// </summary>
@@ -59,19 +88,28 @@ namespace _4.MCargoExpress.Aplication.Middleware
         private async Task ManejadorExceptionAsincrono(HttpContext context, Exception ex, ILogger<ErrorMiddleware> logger)
         {
             object errores = null;
+            int statusCode = GetStatusCode(ex);
+            var response = new
+            {
+                title = GetTitle(ex),
+                status = statusCode,
+                detail = ex.Message,
+                errors = GetErrors(ex)
+            };
             //Se evalua el tipo de error
             switch (ex)
             {
-               //Excepcion base controlada
+                //Excepcion base controlada
                 case ExceptionBase me:
                     logger.LogError(ex, "Manejador Error");
-                    errores = me.errores;
+                    errores = response;
                     context.Response.StatusCode = (int)me.codigo;
                     break;
                 //Excepcion no controlada
                 case Exception e:
-                    logger.LogError(ex, "Error de servidor");
-                    errores = string.IsNullOrWhiteSpace(e.Message) ? "Error" : e.Message;
+                    logger.LogError(ex, GetTitle(e));
+                    errores = response;
+                    context.Response.StatusCode = statusCode;
                     break;
             }
             context.Response.ContentType = "application/json";
@@ -82,6 +120,49 @@ namespace _4.MCargoExpress.Aplication.Middleware
                 await context.Response.WriteAsync(resultado);
             }
 
+        }
+        /// <summary>
+        /// Obtiene el codigo de la respuesta del servidor segun la excepcion
+        /// </summary>
+        /// <param name="exception">objeto Exception</param>
+        /// <returns>Numero codigo de la excepcion</returns>
+        /// Johnny Arcia
+        private static int GetStatusCode(Exception exception) => exception switch
+        {
+            BadRequestException => StatusCodes.Status400BadRequest,
+            NotFoundException => StatusCodes.Status404NotFound,
+            ValidationException => StatusCodes.Status422UnprocessableEntity,
+            _ => StatusCodes.Status500InternalServerError
+        };
+
+        /// <summary>
+        /// Obtiene el titulo de la excepcion capturada
+        /// </summary>
+        /// <param name="exception">objeto Exception</param>
+        /// <returns>Titulo de la excepcion</returns>
+        /// Johnny Arcia
+        private static string GetTitle(Exception exception) => exception switch
+        {
+            _4.MCargoExpress.Aplication.Exceptions.ApplicationException applicationException => applicationException.Title,
+            _ => "Server Error"
+        };
+
+        /// <summary>
+        /// Obtiene los errores capturados en un diccionario
+        /// </summary>
+        /// <param name="exception">objeto Exception</param>
+        /// <returns>Diccionario con los errores</returns>
+        /// Johnny Arcia
+        private static IReadOnlyDictionary<string, string[]> GetErrors(Exception exception)
+        {
+            IReadOnlyDictionary<string, string[]> errors = null;
+
+            if (exception is ValidationException validationException)
+            {
+                errors = validationException.ErrorsDictionary;
+            }
+
+            return errors;
         }
     }
 }

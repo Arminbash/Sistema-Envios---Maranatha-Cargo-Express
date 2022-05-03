@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona.Empleado
 {
     /// <summary>
-    /// Mediador Obtiene los tipo de persona por Id
+    /// Mediador que obtiene el empleado por Id
     /// </summary>
     /// Francisco Rios
     public class ObtenerEmpleadoPorId
@@ -32,16 +32,16 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona.Empleado
         /// Francisco Rios
         public class Manejador : IRequestHandler<Ejecuta, EmpleadoDto>
         {
-            private readonly IEmpleadoService IempleadoService;
+            private readonly IEmpleadoService empleadoService;
 
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="IempleadoService">Contexto Base</param>
+            /// <param name="_IempleadoService">Service de empleado</param>
             /// Francisco Rios
             public Manejador(IEmpleadoService _IempleadoService)
             {
-                IempleadoService = _IempleadoService;
+                empleadoService = _IempleadoService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -52,10 +52,10 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona.Empleado
             /// Francisco Rios
             public async Task<EmpleadoDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = IempleadoService.GetEmpeladoPorIdAsync(request.Id);
+                var query = empleadoService.GetEmpeladoPorIdAsync(request.Id);
                 if (query == null)
                 {
-                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el Tipo Perosna" });
+                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el empleado" });
                 }
                 return await query;
             }

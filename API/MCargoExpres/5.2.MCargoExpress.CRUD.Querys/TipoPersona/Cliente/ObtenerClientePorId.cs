@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente
 {
     /// <summary>
-    /// Mediador Obtiene los Cliente por Id
+    /// Mediador que obtiene el Cliente por Id
     /// </summary>
     /// Francisco Rios
     public class ObtenerClientePorId
@@ -37,7 +37,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="clienteService">Contexto Base</param>
+            /// <param name="_clienteService">Service de cliente</param>
             /// Francisco Rios
             public Manejador(IClienteService _clienteService)
             {
@@ -55,7 +55,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente
                 var query = clienteService.GetClientePorIdAsync(request.Id);
                 if (query == null)
                 {
-                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el Tipo Perosna" });
+                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el cliente" });
                 }
                 return await query;
             }

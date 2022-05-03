@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona.Empleado
 {
     /// <summary>
-    /// Mediador para lista de Empelado
+    /// Mediador para lista de Empleado
     /// </summary>
     /// Francisco Rios
     public class ObtenerEmpleado
@@ -30,15 +30,15 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona.Empleado
         /// Francisco Rios
         public class Manejador : IRequestHandler<Ejecuta, List<EmpleadoDto>>
         {
-            private readonly IEmpleadoService IempleadoService;
+            private readonly IEmpleadoService empleadoService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="IempleadoService"></param>
+            /// <param name="_IempleadoService">Service de empleado</param>
             /// Francisco Rios
             public Manejador (IEmpleadoService _IempleadoService)
             {
-                IempleadoService = _IempleadoService;
+                empleadoService = _IempleadoService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -49,7 +49,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona.Empleado
             /// Francisco Rios
             public async Task<List<EmpleadoDto>> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await IempleadoService.GetAllEmpleadoAsync();
+                var query = await empleadoService.GetAllEmpleadoAsync();
                 return query.ToList();
             }
         }

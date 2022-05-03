@@ -14,16 +14,16 @@ using System.Threading.Tasks;
 namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
 {
     /// <summary>
-    /// Mediador Crear  Cliente
+    /// Mediador para crear una persona
     /// </summary>
-    /// Francisco Rios
-    public class CreatePersona 
+    public class CreatePersona
     {
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest  {
-        
+        public class Ejecuta : IRequest<PersonaDto>
+        {
+
             public string PrimerNombre { get; set; }
             public string SegundoNombre { get; set; }
             public string PrimerApellido { get; set; }
@@ -40,7 +40,8 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
             /// <summary>
             /// Fluent Validation
             /// </summary>
-            public CreateValidacion (){
+            public CreateValidacion()
+            {
                 RuleFor(x => x.PrimerNombre).NotEmpty();
                 RuleFor(x => x.SegundoNombre).NotEmpty();
                 RuleFor(x => x.PrimerApellido).NotEmpty();
@@ -56,18 +57,16 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta,PersonaDto>
         {
-            private readonly IConexion context;
             private readonly IPersonaService personaService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="context">IConexion</param>
+            /// <param name="_personaService">Service de persona</param>
             /// Francisco Rios
-            public Manejador(IConexion _context,IPersonaService _personaService)
+            public Manejador(IPersonaService _personaService)
             {
-                context = _context;
                 personaService = _personaService;
             }
             /// <summary>
@@ -77,7 +76,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns></returns>
             /// Franciso Rios
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<PersonaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = new PersonaDto
                 {
@@ -92,11 +91,11 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona._Persona
                     TipoPersonaId = request.TipoPersonaId,
                     Estado = true
                 };
-             
+
                 var valor = await personaService.AddPersonaAsync(query);
                 if (valor != null)
                 {
-                    return Unit.Value;
+                    return valor;
                 }
                 throw new Exception("No se logro ingresar la persona");
 

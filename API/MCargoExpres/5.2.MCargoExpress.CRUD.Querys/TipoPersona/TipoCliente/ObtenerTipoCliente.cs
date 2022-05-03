@@ -30,15 +30,15 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona_._TipoCliente
         public class Manejador : IRequestHandler<Ejecuta, List<TipoClienteDto>>
         {
             
-            private readonly ITipoClienteService ItipoClienteService;
+            private readonly ITipoClienteService tipoClienteService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="ItipoClienteService">Contexto Base</param>
+            /// <param name="_ItipoClienteService">Service de tipo cliente</param>
             /// Francisco Rios
             public Manejador(ITipoClienteService _ItipoClienteService)
             {
-                ItipoClienteService = _ItipoClienteService;
+                tipoClienteService = _ItipoClienteService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -49,7 +49,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona_._TipoCliente
             /// Francisco Rios
             public async Task<List<TipoClienteDto>> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await ItipoClienteService.GetAllTipoClienteAsync();
+                var query = await tipoClienteService.GetAllTipoClienteAsync();
                 return query.ToList();
             }
         }

@@ -58,7 +58,7 @@ namespace _4.MCargoExpress.Aplication.Specifications
         /// </summary>
         /// <param name="orderByExpression">Expresion de ordenamiento</param>
         /// Johnny Arcia
-        protected void AddOrderBy(Expression<Func<T, object>> orderByExpression)
+        public void AddOrderBy(Expression<Func<T, object>> orderByExpression)
         {
             OrderBy = orderByExpression;
         }
@@ -67,7 +67,7 @@ namespace _4.MCargoExpress.Aplication.Specifications
         /// </summary>
         /// <param name="orderByDescExpression">Expresion de ordenamiento</param>
         /// Johnny Arcia
-        protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescExpression)
+        public void AddOrderByDescending(Expression<Func<T, object>> orderByDescExpression)
         {
             OrderByDescending = orderByDescExpression;
         }
@@ -89,7 +89,7 @@ namespace _4.MCargoExpress.Aplication.Specifications
         /// <param name="skip">Cantidad de registros excluidos</param>
         /// <param name="take">Cantidad de registros</param>
         /// Johnny Arcia
-        protected void ApplyPaging(int skip, int take)
+        public void ApplyPaging(int skip, int take)
         {
             Skip = skip;
             Take = take;

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona
 {
     /// <summary>
-    /// Mediador Crear Tipo Persona
+    /// Mediador para crear un Tipo de Persona
     /// </summary>
     /// Francisco Rios
     public class CreateTipoPersona
@@ -23,7 +23,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest
+        public class Ejecuta : IRequest<TipoPersonaDto>
         {
             public string Tipo { get; set; }
             public bool Estatus { get; set; }
@@ -41,21 +41,18 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta, TipoPersonaDto>
         {
-            private readonly IConexion _context;
-            private readonly ITipoPersonaService _ItipoPersonaService;
+            private readonly ITipoPersonaService tipoPersonaService;
 
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="context">IConexion</param>
-             /// <param name="ItipoPersonaService">TipoPersonaService</param
+            /// <param name="_tipoPersonaService">Service de tipo persona</param
             /// Francisco Rios
-            public Manejador(IConexion context,ITipoPersonaService ItipoPersonaService)
+            public Manejador(ITipoPersonaService _tipoPersonaService)
             {
-                _context = context;
-                _ItipoPersonaService = ItipoPersonaService;
+                tipoPersonaService = _tipoPersonaService;
 
             }
             /// <summary>
@@ -65,25 +62,20 @@ namespace _5._1.MCargoExpress.CRUD.Commands._TipoPersona
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns>Promesa de tipo persona</returns>
             /// Franciso Rios
-
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<TipoPersonaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = new TipoPersonaDto
-
                 {
                     Tipo = request.Tipo,
                     Estado = request.Estatus
-
                 };
-                //_context.TipoPersona.Add(query);
 
-              //  _tipoPersonaService.AddTipoPersonaAsync(query);
-                var valor = await _ItipoPersonaService.AddTipoPersonaAsync(query);
+                var valor = await tipoPersonaService.AddTipoPersonaAsync(query);
                 if (valor != null)
                 {
-                    return Unit.Value;
+                    return valor;
                 }
-                throw new Exception("No crear el tipo persona");
+                throw new Exception("Error al crear el tipo persona");
             }
         }
     }

@@ -33,17 +33,15 @@ namespace _5._2.MCargoExpress.CRUD.Querys._QTipoPersona
         /// Francisco Rios
         public class Manejador : IRequestHandler<Ejecuta, TipoPersonaDto>
         {
-            private readonly IConexion context;
-            private readonly ITipoPersonaService _ItipoPersonaServices;
+            private readonly ITipoPersonaService tipoPersonaServices;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="_context">Contexto Base</param>
+            /// <param name="_ItipoPersonaService">Service de tipo persona</param>
             /// Francisco Rios
-            public Manejador(IConexion _context,ITipoPersonaService ItipoPersonaService)
+            public Manejador(ITipoPersonaService _ItipoPersonaService)
             {
-                context = _context;
-                _ItipoPersonaServices = ItipoPersonaService;
+                tipoPersonaServices = _ItipoPersonaService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -54,10 +52,10 @@ namespace _5._2.MCargoExpress.CRUD.Querys._QTipoPersona
             /// Francisco Rios
             public async Task<TipoPersonaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await _ItipoPersonaServices.GetTipoPersonaPorIdAsync(request.Id);
+                var query = await tipoPersonaServices.GetTipoPersonaPorIdAsync(request.Id);
                 if (query == null)
                 {
-                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el Tipo Perosna" });
+                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe el Tipo Persona" });
                 }
                 return query;
             }

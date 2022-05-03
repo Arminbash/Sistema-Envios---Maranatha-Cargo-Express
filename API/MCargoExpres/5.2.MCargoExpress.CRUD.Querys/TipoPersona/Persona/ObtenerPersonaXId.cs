@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona._Persona
 {
     /// <summary>
-    /// Mediador Obtiene la persona por Id
+    /// Mediador que obtiene la persona por Id
     /// </summary>
     /// Francisco Rios
     public class ObtenerPersonaXId
@@ -32,15 +32,15 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona._Persona
         /// Francisco Rios
         public class Manejador : IRequestHandler<Ejecuta, PersonaDto>
         {
-            private readonly IPersonaService IpersonaService;
+            private readonly IPersonaService personaService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="_IPersonaService">Contexto Base</param>
+            /// <param name="_IPersonaService">Service de persona</param>
             /// Francisco Rios
             public Manejador (IPersonaService _IPersonaService)
             {
-                IpersonaService = _IPersonaService;
+                personaService = _IPersonaService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -51,10 +51,10 @@ namespace _5._2.MCargoExpress.CRUD.Querys._TipoPersona._Persona
             /// Francisco Rios
             public async Task<PersonaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await IpersonaService.GetPersonaPorIdAsync(request.Id);
+                var query = await personaService.GetPersonaPorIdAsync(request.Id);
                 if( query == null)
                 {
-                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe la Perosna" });
+                    throw new ExceptionBase(HttpStatusCode.NotFound, new { Mensaje = "No existe la Persona" });
 
                 }
                 return query;

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
 {
     /// <summary>
-    /// Mediador Update Tipo Cliente
+    /// Mediador para actualizar un Tipo de Cliente
     /// </summary>
     /// Francisco Rios
     public class UpdateTipoCliente
@@ -22,7 +22,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest
+        public class Ejecuta : IRequest<TipoClienteDto>
         {
             public int Id { get; set; }
             public string Tipo { get; set; }
@@ -42,18 +42,18 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta,TipoClienteDto>
         {
-            private readonly ITipoClienteService _ItipoClienteService;
+            private readonly ITipoClienteService tipoClienteService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="_ItipoClienteService">IConexion</param>
+            /// <param name="_tipoClienteService">Service de tipo cliente</param>
             /// Francisco Rios
-            public Manejador( ITipoClienteService tipoClienteService)
+            public Manejador( ITipoClienteService _tipoClienteService)
             {
 
-                _ItipoClienteService = tipoClienteService;
+                tipoClienteService = _tipoClienteService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -62,29 +62,27 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns>Promesa de tipo persona</returns>
             /// Franciso Rios
-
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<TipoClienteDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await _ItipoClienteService.GetTipoClientePorIdAsync(request.Id);
+                var query = await tipoClienteService.GetTipoClientePorIdAsync(request.Id);
                 if (query == null)
                 {
-                    throw new ExceptionBase(HttpStatusCode.BadRequest, new { Mensaje = "Error al editar el tipo persona" });
+                    throw new ExceptionBase(HttpStatusCode.BadRequest, new { Mensaje = "Error al editar el tipo cliente" });
                 }
 
                 var UpdateQuery = new TipoClienteDto
                 {
                     Id = query.Id,
-                    Tipo = request.Tipo ?? query.Tipo,
+                    Tipo = request.Tipo,
                     Estado = request.Estado ?? query.Estado
-
                 };
 
-                var valor = await _ItipoClienteService.UpdateTipoClienteAsync(UpdateQuery);
+                var valor = await tipoClienteService.UpdateTipoClienteAsync(UpdateQuery);
                 if (valor != null)
                 {
-                    return Unit.Value;
+                    return valor;
                 }
-                throw new Exception("errror al acutalizar");
+                throw new Exception("error al actualizar");
             }
         }
     }

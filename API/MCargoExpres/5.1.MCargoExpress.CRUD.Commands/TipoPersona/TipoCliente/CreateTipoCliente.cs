@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
 {
     /// <summary>
-    /// Mediador Crear Tipo Cliente
+    /// Mediador para crear un Tipo de Cliente
     /// </summary>
     /// Francisco Rios
     public class CreateTipoCliente
@@ -20,7 +20,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest
+        public class Ejecuta : IRequest<TipoClienteDto>
         {
             public string Tipo { get; set; }
             public bool Estatus { get; set; }
@@ -38,20 +38,20 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta,TipoClienteDto>
         {
             
-            private readonly ITipoClienteService _ItipoClienteService;
+            private readonly ITipoClienteService tipoClienteService;
 
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="ItipoClienteService">TipoPersonaService</param
+            /// <param name="_tipoClienteService">Service de tipo cliente</param
             /// Francisco Rios
-            public Manejador( ITipoClienteService ItipoClienteService)
+            public Manejador( ITipoClienteService _tipoClienteService)
             {
-               
-                _ItipoClienteService = ItipoClienteService;
+
+                tipoClienteService = _tipoClienteService;
 
             }
             /// <summary>
@@ -62,24 +62,20 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
             /// <returns>Promesa de tipo persona</returns>
             /// Franciso Rios
 
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<TipoClienteDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = new TipoClienteDto
-
                 {
                     Tipo = request.Tipo,
                     Estado = request.Estatus
-
                 };
-                //_context.TipoPersona.Add(query);
 
-                //  _tipoPersonaService.AddTipoPersonaAsync(query);
-                var valor = await _ItipoClienteService.AddTipoClienteAsync(query);
+                var valor = await tipoClienteService.AddTipoClienteAsync(query);
                 if (valor != null)
                 {
-                    return Unit.Value;
+                    return valor;
                 }
-                throw new Exception("No crear el tipo persona");
+                throw new Exception("Error al crear el tipo cliente");
             }
         }
     }

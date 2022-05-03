@@ -27,6 +27,8 @@ using Microsoft.Extensions.Options;
 using Ninject;
 using System.Reflection;
 using _4.MCargoExpress.Aplication.NinjectConfig;
+using FluentValidation;
+using _4.MCargoExpress.Aplication.Middleware;
 
 namespace MCargoExpres.Api
 {
@@ -48,10 +50,19 @@ namespace MCargoExpres.Api
             //Se configuran las conexiones de las base de datos
             ConnectionConfig.Config(Configuration, services);
             services.AddOptions();
+            //Se agrega referencia del middleware para captura de excepciones
+            services.AddTransient<ErrorMiddleware>();
 
+            //Configuracion Assembly de mediatR en ambas capas
             services.AddMediatR(typeof(Login.Manejador).Assembly);
             services.AddMediatR(typeof(_5._2.MCargoExpress.CRUD.Querys.Login.UsuarioActual).Assembly);
-           
+
+            //Se agregan las referencias del fluent validation
+            services.AddValidatorsFromAssembly(typeof(Login.Manejador).Assembly);
+            services.AddValidatorsFromAssembly(typeof(_5._2.MCargoExpress.CRUD.Querys.Login.UsuarioActual).Assembly);
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
             //Configuracion del dapper
             DapperConfig.Config(Configuration, services);
 
@@ -114,9 +125,5 @@ namespace MCargoExpres.Api
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MaranathaCargoExpres-Api v1"));
 
         }
-    }
-
-    internal class AddTipoPersonaAsync
-    {
     }
 }

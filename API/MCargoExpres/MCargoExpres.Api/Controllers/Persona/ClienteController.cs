@@ -30,7 +30,7 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <remarks>Francisco Rios</remarks>
         // /api/Rol/CreateCliente
         [HttpPost("CreateCliente")]
-        public async Task<ActionResult<Unit>> CreateCliente(CreateCliente.Ejecuta parametros)
+        public async Task<ActionResult<ClienteDto>> CreateCliente(CreateCliente.Ejecuta parametros)
         {
             return await mediator.Send(parametros);
         }
@@ -42,7 +42,7 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <remarks>Francisco Rios</remarks>
         // /api/Empleado/updateCliente
         [HttpPut("UpdateCliente")]
-        public async Task<ActionResult<Unit>> UpdateCliente(UpdateCliente.Ejecuta data)
+        public async Task<ActionResult<ClienteDto>> UpdateCliente(UpdateCliente.Ejecuta data)
         {
             return await mediator.Send(data);
         }

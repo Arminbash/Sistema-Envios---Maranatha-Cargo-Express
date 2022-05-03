@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Empleado
 {
     /// <summary>
-    /// Mediador Crear  Empleado
+    /// Mediador para Crear Empleado
     /// </summary>
     /// Francisco Rios
     public class CreateEmpleado 
@@ -20,7 +20,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Empleado
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest
+        public class Ejecuta : IRequest<EmpleadoDto>
         {
             public int PersonaId { get; set; }
          
@@ -48,17 +48,17 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Empleado
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta,EmpleadoDto>
         {
-            private readonly IEmpleadoService IempleadoService;
+            private readonly IEmpleadoService empleadoService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="_IempleadoService">IConexion</param>
+            /// <param name="_IempleadoService">Service de empleado</param>
             /// Francisco Rios
             public Manejador(IEmpleadoService _IempleadoService)
             {
-                IempleadoService = _IempleadoService;
+                empleadoService = _IempleadoService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -67,7 +67,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Empleado
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns></returns>
             /// Franciso Rios
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<EmpleadoDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = new EmpleadoDto
                 {
@@ -77,14 +77,13 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Empleado
                     NumeroLicencia = request.NumeroLicencia,
                     Foto = request.Foto,
                     Estado = true
-
                 };
-                var valor = await IempleadoService.AddEmpledoAsync(query);
+                var valor = await empleadoService.AddEmpledoAsync(query);
                 if (valor != null)
                 {
-                    return Unit.Value;
+                    return valor;
                 }
-                throw new Exception("No se logro ingresar la persona");
+                throw new Exception("No se logro ingresar el empleado");
             }
         }
     }

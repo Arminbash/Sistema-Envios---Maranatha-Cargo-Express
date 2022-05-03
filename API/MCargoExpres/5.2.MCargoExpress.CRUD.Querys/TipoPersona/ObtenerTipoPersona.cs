@@ -31,17 +31,16 @@ namespace _5._2.MCargoExpress.CRUD.Querys._QTipoPersona
         /// Francisco Rios
         public class Manejador : IRequestHandler<Ejecuta, List<TipoPersonaDto>>
         {
-            private readonly IConexion context;
-            private readonly ITipoPersonaService ItipoPersonaService;
+            private readonly ITipoPersonaService tipoPersonaService;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
             /// <param name="_context">Contexto Base</param>
+            /// <param name="_ItipoPersonaService">Service de tipo persona</param>
             /// Francisco Rios
-            public Manejador(IConexion _context, ITipoPersonaService _ItipoPersonaService)
+            public Manejador( ITipoPersonaService _ItipoPersonaService)
             {
-                context = _context;
-                ItipoPersonaService = _ItipoPersonaService;
+                tipoPersonaService = _ItipoPersonaService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -52,7 +51,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys._QTipoPersona
             /// Francisco Rios
             public async Task<List<TipoPersonaDto>> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await ItipoPersonaService.GetAllTipoPersonaAsync();
+                var query = await tipoPersonaService.GetAllTipoPersonaAsync();
                 return query.ToList();
             }
         }

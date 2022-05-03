@@ -29,7 +29,7 @@ namespace MCargoExpres.Api.Controllers.Traduccion
         /// <remarks>Francisco Rios</remarks>
         // /api/Traduccion/CrearTraduccion
         [HttpPost("CrearTraduccion")]
-        public async Task<ActionResult<Unit>> CreateTipoPersona(CreateTraduccion.Ejecuta parametros)
+        public async Task<ActionResult<TraduccionDto>> CreateTipoPersona(CreateTraduccion.Ejecuta parametros)
         {
             return await mediator.Send(parametros);
         }

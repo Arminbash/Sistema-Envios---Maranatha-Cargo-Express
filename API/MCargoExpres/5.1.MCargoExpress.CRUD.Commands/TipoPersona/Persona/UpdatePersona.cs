@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
 {
     /// <summary>
-    /// Mediador Update Persona
+    /// Mediador para actualizar una persona
     /// </summary>
     /// Francisco Rios
     public class UpdatePersona
@@ -23,7 +23,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest 
+        public class Ejecuta : IRequest<PersonaDto>
         {
             public int Id { get; set; }
             public string PrimerNombre { get; set; }
@@ -60,19 +60,17 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta,PersonaDto>
         {
-            private readonly IConexion _context;
-            private readonly IPersonaService _IpersonaServices;
+            private readonly IPersonaService personaServices;
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
-            /// <param name="context">IConexion</param>
+            /// <param name="_personaService">Service de persona</param>
             /// Francisco Rios
-            public Manejador(IConexion context, IPersonaService personaService) 
+            public Manejador(IPersonaService _personaService)
             {
-                _context = context;
-                _IpersonaServices = personaService;
+                personaServices = _personaService;
             }
             /// <summary>
             /// Metodo que ejecuta el contrato y devuelve la promesa
@@ -81,9 +79,9 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns>Promesa de persona</returns>
             /// Franciso Rios
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<PersonaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var query = await _IpersonaServices.GetPersonaPorIdAsync(request.Id);
+                var query = await personaServices.GetPersonaPorIdAsync(request.Id);
                 if (query == null)
                 {
                     throw new ExceptionBase(HttpStatusCode.BadRequest, new { Mensaje = "Persona no encontrada" });
@@ -103,10 +101,10 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.Persona
                     TipoPersonaId = request.TipoPersonaId  ?? query.TipoPersonaId,
                     Estado = request.Estado
                 };
-                var valor = await _IpersonaServices.UpdatePersonaAsync(UpdateQuery);
-                if(valor != null)
+                var valor = await personaServices.UpdatePersonaAsync(UpdateQuery);
+                if (valor != null)
                 {
-                    return Unit.Value;
+                    return valor;
                 }
                 throw new Exception("error al actualizar");
             }
