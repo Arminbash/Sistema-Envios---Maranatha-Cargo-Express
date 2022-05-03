@@ -1,6 +1,8 @@
 ﻿using _1.MCargoExpress.Domain;
 using _2._1.MCargoExpress.Persistence.Connection;
 using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
+using _3._2.MCargoExpress.Enums;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
 using AutoMapper;
 using System;
@@ -95,6 +97,41 @@ namespace _4.MCargoExpress.Aplication.Logic
                 repository.UpdateEntity(newTipoCliente);
                 await _unitOfWork.Complete();
                 return tipoCliente;
+            }
+        }
+        /// <summary>
+        /// Obtiene la lista de tipo clientes paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con los datos de paginacion</param>
+        /// <returns>Retorna los tipo cliente paginados</returns>
+        /// Francisco Rios 
+        public async Task<PaginationRequestBase<TipoClienteDto>> GetTipoClientePaginadoAsync(PaginationDto pagination)
+        {
+            using (var _unitOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<TipoCliente>(x => (pagination.generalSearch == null || x.Tipo.Contains(pagination.generalSearch)) && (pagination.Estado == null || x.Estado == pagination.Estado));
+                var totalData = await _unitOfWork.Repository<TipoCliente>().CountAsync(query);
+
+                if (pagination.sort == SortEnum.desc) query.AddOrderByDescending(x => x.Id);
+                else query.AddOrderBy(x => x.Id);
+
+                query.ApplyPaging(pagination.perpage * (pagination.page - 1), pagination.perpage);
+
+                var listTipoCliente = await _unitOfWork.Repository<TipoCliente>().GetAllWithSpec(query);
+                var request = new PaginationRequestBase<TipoClienteDto>
+                {
+                    meta = new PaginationMetadataBase
+                    {
+                        page = pagination.page,
+                        field = pagination.field,
+                        pages = (totalData + pagination.perpage - 1) / pagination.perpage,
+                        perpage = pagination.perpage,
+                        sort = pagination.sort,
+                        total = totalData
+                    },
+                    data = mapper.Map<List<TipoCliente>, List<TipoClienteDto>>(listTipoCliente.ToList())
+                };
+                return request;
             }
         }
     }

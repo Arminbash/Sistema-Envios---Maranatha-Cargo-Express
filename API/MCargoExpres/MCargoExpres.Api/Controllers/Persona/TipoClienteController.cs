@@ -1,6 +1,8 @@
 ﻿using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
 using _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente;
 using _5._2.MCargoExpress.CRUD.Querys._TipoPersona_._TipoCliente;
+using _5._2.MCargoExpress.CRUD.Querys.TipoPersona.TipoCliente;
 using _5._2.MCargoExpress.CRUD.Querys.TipoPersona_.TipoCliente;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -68,6 +70,18 @@ namespace MCargoExpres.Api.Controllers.Persona
         public async Task<ActionResult<TipoClienteDto>> GetTipoPersonaXId(int id)
         {
             return await mediator.Send(new ObtenerTipoClienteXId.Ejecuta { Id = id });
+        }
+        /// <summary>
+        /// EndPoint que obtiene los tipos de clientes paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con datos de paginación</param>
+        /// <returns></returns>
+        /// <remarks>Francisco Rios/remarks>
+        /// /api/TipoCliente/ObtenerTipoClientePaginado
+        [HttpPost("ObtenerTipoClientePaginado")]
+        public async Task<ActionResult<PaginationRequestBase<TipoClienteDto>>> GetTipoClientePaginado(PaginationDto pagination)
+        {
+            return await mediator.Send(new ObtenerTipoClientePaginado.Ejecuta { pagination = pagination });
         }
     }
 }

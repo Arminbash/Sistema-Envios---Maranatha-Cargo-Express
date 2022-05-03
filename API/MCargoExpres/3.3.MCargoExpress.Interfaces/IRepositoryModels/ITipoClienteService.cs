@@ -1,4 +1,5 @@
 ﻿using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,13 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
             /// <returns>Retorna la traduccion que contienen la clave</returns>
             /// Francisco Rios
             Task<TipoClienteDto> GetTipoClientePorIdAsync(int IdTipoCliente);
-        }
+             /// <summary>
+             /// Obtiene la lista de tipo clientes paginados
+            /// </summary>
+            /// <param name="pagination">Objeto con los datos de paginacion</param>
+            /// <returns>Retorna los tipo cliente paginados</returns>
+           /// Francisco Rios
+        Task<PaginationRequestBase<TipoClienteDto>> GetTipoClientePaginadoAsync(PaginationDto pagination);
+    }
     }
 

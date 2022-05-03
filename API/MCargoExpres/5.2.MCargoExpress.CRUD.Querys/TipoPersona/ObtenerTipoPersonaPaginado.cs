@@ -45,7 +45,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona
         /// Clase encargada de ejecutar el contrato
         /// </summary>
         /// Johnny Arcia
-            public class Manejador : IRequestHandler<Ejecuta, PaginationRequestBase<TipoPersonaDto>>
+       public class Manejador : IRequestHandler<Ejecuta, PaginationRequestBase<TipoPersonaDto>>
         {
             private readonly ITipoPersonaService _tipoPersonaService;
             /// <summary>
