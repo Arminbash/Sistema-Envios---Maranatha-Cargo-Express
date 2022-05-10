@@ -66,7 +66,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
         // /api/TipoCliente/ObtenerTipoPCliente/Id
-        [HttpGet("ObtenerTipoPersona/{id}")]
+        [HttpGet("ObtenerTipoCliente/{id}")]
         public async Task<ActionResult<TipoClienteDto>> GetTipoPersonaXId(int id)
         {
             return await mediator.Send(new ObtenerTipoClienteXId.Ejecuta { Id = id });

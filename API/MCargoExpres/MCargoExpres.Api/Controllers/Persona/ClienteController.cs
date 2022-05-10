@@ -1,6 +1,8 @@
 ﻿using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
 using _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente;
 using _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente.Cliente;
+using _5._2.MCargoExpress.CRUD.Querys.TipoPersona.Cliente;
 using _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente;
 using _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Empleado;
 using MediatR;
@@ -28,7 +30,7 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/CreateCliente
+        // /api/Cliente/CreateCliente
         [HttpPost("CreateCliente")]
         public async Task<ActionResult<ClienteDto>> CreateCliente(CreateCliente.Ejecuta parametros)
         {
@@ -40,7 +42,7 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Empleado/updateCliente
+        // /api/Cliente/updateCliente
         [HttpPut("UpdateCliente")]
         public async Task<ActionResult<ClienteDto>> UpdateCliente(UpdateCliente.Ejecuta data)
         {
@@ -52,7 +54,7 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Empleado/ObtenerCliente
+        // /api/Cliente/ObtenerCliente
         [HttpGet("ObtenerCliente")]
         public async Task<ActionResult<List<ClienteDto>>> GetCliente()
         {
@@ -64,13 +66,23 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Empleado/ObtenerCliente
+        // /api/Cliente/ObtenerCliente
         [HttpGet("ObtenerCliente/{id}")]
         public async Task<ActionResult<ClienteDto>> GetClienteXId(int id)
         {
             return await mediator.Send(new ObtenerClientePorId.Ejecuta { Id = id });
-
-
+        }
+        /// <summary>
+        /// EndPoint que obtiene los  clientes paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con datos de paginación</param>
+        /// <returns></returns>
+        /// <remarks>Francisco Rios/remarks>
+        /// /api/Cliente/ObtenerClientePaginado
+        [HttpPost("ObtenerClientePaginado")]
+        public async Task<ActionResult<PaginationRequestBase<ClienteDto>>> GetClientePaginado(PaginationDto pagination)
+        {
+            return await mediator.Send(new ObtenerClientePaginado.Ejecuta { pagination = pagination });
         }
     }
 }

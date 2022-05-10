@@ -1,6 +1,8 @@
 ﻿using _1.MCargoExpress.Domain;
 using _2._1.MCargoExpress.Persistence.Connection;
 using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
+using _3._2.MCargoExpress.Enums;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
 using AutoMapper;
 using System;
@@ -95,6 +97,50 @@ namespace _4.MCargoExpress.Aplication.Logic
                 repository.UpdateEntity(newCliente);
                 await _UnitOfWork.Complete();
                 return cliente;
+            }
+        }
+        /// <summary>
+        /// Obtiene la lista de clientes paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con los datos de paginacion</param>
+        /// <returns>Retorna los cliente paginados</returns>
+        /// Francisco Rios 
+        public async Task<PaginationRequestBase<ClienteDto>> GetClientePaginadoAsync(PaginationDto pagination)
+        {
+            using (var _unitOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<Cliente>(x => (pagination.generalSearch == null || x.Persona.PrimerNombre.Contains(pagination.generalSearch)) && (pagination.Estado == null || x.Estado == pagination.Estado));
+                var totalData = await _unitOfWork.Repository<Cliente>().CountAsync(query);
+
+                if (pagination.sort == SortEnum.desc) query.AddOrderByDescending(x => x.Id);
+                else query.AddOrderBy(x => x.Id);
+
+                query.ApplyPaging(pagination.perpage * (pagination.page - 1), pagination.perpage);
+
+                var listTipoCliente =  _unitOfWork.Repository<Cliente>().ApplySpecification(query).Select(x => new ClienteDto
+                {
+                    Id = x.Id,
+                    PersonaId = x.PersonaId,
+                    TipoClienteId =x.TipoClienteId,
+                    PrimerNombre  = x.Persona.PrimerNombre,
+                    Estado= x.Estado
+
+                });
+
+                var request = new PaginationRequestBase<ClienteDto>
+                {
+                    meta = new PaginationMetadataBase
+                    {
+                        page = pagination.page,
+                        field = pagination.field,
+                        pages = (totalData + pagination.perpage - 1) / pagination.perpage,
+                        perpage = pagination.perpage,
+                        sort = pagination.sort,
+                        total = totalData
+                    },
+                    data = listTipoCliente.ToList()
+                };
+                return request;
             }
         }
     }

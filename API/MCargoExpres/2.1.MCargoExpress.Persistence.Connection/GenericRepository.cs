@@ -75,7 +75,7 @@ namespace _2._1.MCargoExpress.Persistence.Connection
         /// <param name="spec">Configuracion del query</param>
         /// <returns>Query con la configuracion aplicada</returns>
         /// Johnny Arcia
-        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        public IQueryable<T> ApplySpecification(ISpecification<T> spec)
         {
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }

@@ -34,7 +34,8 @@ namespace _3._3.MCargoExpress.Interfaces
         /// <param name="spec">Query con los filtros</param>
         /// <returns>Primer Registro filtrado</returns>
         /// Johnny Arcia
-        Task<T> GetByIdWithSpec(ISpecification<T> spec);
+        IQueryable<T> ApplySpecification(ISpecification<T> spec);
+       Task<T> GetByIdWithSpec(ISpecification<T> spec);
         /// <summary>
         /// Obtiene todos los regristros que aplican al filtro
         /// </summary>
@@ -87,5 +88,6 @@ namespace _3._3.MCargoExpress.Interfaces
         /// <param name="Entity">Entidad</param>
         /// Johnny Arcia
         void LogicDeleteEntity(T Entity);
+       
     }
 }

@@ -16,6 +16,7 @@ namespace _3._1.MCargoExpress.Dtos
         /// clave forena de persona
         /// </summary>
         public int PersonaId { get; set; }
+        public string PrimerNombre { get; set; }
         /// <summary>
         /// Tipo de Cliente
         /// </summary>
