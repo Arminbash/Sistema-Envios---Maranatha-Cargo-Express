@@ -48,6 +48,7 @@ namespace _4.MCargoExpress.Aplication.Logic
                 var repository = _unitOfWork.Repository<TipoCliente>();
                 TipoCliente newTipoCliente = new TipoCliente();
                 mapper.Map(tipoCliente, newTipoCliente);
+                newTipoCliente.Estado = true;
                 repository.AddEntity(newTipoCliente);
                 await _unitOfWork.Complete();
                 return tipoCliente;
