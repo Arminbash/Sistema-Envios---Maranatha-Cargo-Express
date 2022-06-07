@@ -47,6 +47,7 @@ namespace _4.MCargoExpress.Aplication.Logic
                 var repository = _UnitOfWork.Repository<Cliente>();
                Cliente newCliente = new Cliente();
                 mapper.Map(clienteDto, newCliente);
+                newCliente.Estado = true;
                 repository.AddEntity(newCliente);
                 await _UnitOfWork.Complete();
                 return clienteDto;
