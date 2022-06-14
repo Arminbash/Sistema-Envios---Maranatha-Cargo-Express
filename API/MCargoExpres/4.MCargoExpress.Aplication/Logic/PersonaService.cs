@@ -1,6 +1,8 @@
 ﻿using _1.MCargoExpress.Domain;
 using _2._1.MCargoExpress.Persistence.Connection;
 using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
+using _3._2.MCargoExpress.Enums;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
 using AutoMapper;
 using System;
@@ -95,6 +97,51 @@ namespace _4.MCargoExpress.Aplication.Logic
                 repositoty.UpdateEntity(newPersona);
                 await _UnitOfWork.Complete();
                 return persona;
+            }
+        }
+        /// <summary>
+        /// Obtiene la lista de  personas paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con los datos de paginacion</param>
+        /// <returns>Retorna la lista personas paginados</returns>
+        /// Francisco Rios
+        public async Task<PaginationRequestBase<PersonViewModel>> GetPersonaPaginadoAsync(PaginationDto pagination)
+        {
+            using (var _uniOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<Persona>(x => (pagination.generalSearch == null || x.PrimerNombre.Contains(pagination.generalSearch)) && (pagination.Estado == null || x.Estado == pagination.Estado));
+                var totalData = await _uniOfWork.Repository<Persona>().CountAsync(query);
+
+                if (pagination.sort == SortEnum.desc) query.AddOrderByDescending(x => x.Id);
+                else query.AddOrderBy(x => x.Id);
+
+                query.ApplyPaging(pagination.perpage * (pagination.page - 1), pagination.perpage);
+
+                var listPersona =  _uniOfWork.Repository<Persona>().ApplySpecification(query).Select(x=> new PersonViewModel
+                {
+                  Id= x.Id,
+                  Nombre = x.PrimerNombre + " " + x.PrimerApellido + " "+ x.SegundoApellido,
+                  Cedula = x.Cedula,
+                  Correo = x.Correo,
+                  Telefono = x.Telefono,
+                  TipoPersona = x.TipoPersona.Tipo,
+                  Estado = x.Estado
+
+                });
+                var request = new PaginationRequestBase<PersonViewModel>
+                {
+                    meta = new PaginationMetadataBase
+                    {
+                        page = pagination.page,
+                        field = pagination.field,
+                        pages = (totalData + pagination.perpage - 1) / pagination.perpage,
+                        perpage = pagination.perpage,
+                        sort = pagination.sort,
+                        total = totalData
+                    },
+                    data = listPersona.ToList()
+                };
+                return request;
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using _1.MCargoExpress.Domain;
 using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,13 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// <returns>Retorna una persona</returns>
         /// Francisco Rios
         Task<PersonaDto> GetPersonaPorIdAsync(int IdPersona);
+        /// <summary>
+        /// Obtiene la lista de personas paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con los datos de paginacion</param>
+        /// <returns>Retorna las lista persona paginados</returns>
+        /// Francisco Rios
+        Task<PaginationRequestBase<PersonViewModel>> GetPersonaPaginadoAsync(PaginationDto pagination);
 
     }
 }

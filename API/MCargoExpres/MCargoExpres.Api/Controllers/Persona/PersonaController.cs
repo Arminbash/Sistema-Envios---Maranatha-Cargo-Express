@@ -10,6 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _3._1.MCargoExpress.Dtos;
+using _3._1.MCargoExpress.Dtos.Base;
+using _5._2.MCargoExpress.CRUD.Querys.TipoPersona.Persona;
 
 namespace MCargoExpres.Api.Controllers.Persona
 {
@@ -28,7 +31,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/CreatePersona
+        // /api/persona/CreatePersona
         [HttpPost("CreatePersona")]
         public async Task<ActionResult<PersonaDto>> CreateTipoPersona(CreatePersona.Ejecuta parametros)
         {
@@ -40,7 +43,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/UpdatePersona
+        // /api/persona/UpdatePersona
         [HttpPut("UpdatePersona")]
         public async Task<ActionResult<PersonaDto>> UpdateTipoPersona(UpdatePersona.Ejecuta data)
         {
@@ -52,7 +55,7 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/ObtenerPersona
+        // /api/persona/ObtenerPersona
         [HttpGet("ObtenerPersona")]
         public async Task<ActionResult<List<PersonaDto>>> GetPersona()
         {
@@ -64,11 +67,23 @@ namespace MCargoExpres.Api.Controllers.Persona
         /// <param name="parametros">Parametros para mediador</param>
         /// <returns></returns>
         /// <remarks>Francisco Rios</remarks>
-        // /api/Rol/ObtenerPersona
+        // /api/persona/ObtenerPersona
         [HttpGet("ObtenerPersona/{id}")]
         public async Task<ActionResult<PersonaDto>> GetPersonaXId(int id)
         {
             return await mediator.Send(new ObtenerPersonaXId.Ejecuta { Id = id });
+        }
+        /// <summary>
+        /// EndPoint que obtiene los tipos de personas paginados
+        /// </summary>
+        /// <param name="pagination">Objeto con datos de paginación</param>
+        /// <returns></returns>
+        /// <remarks>Francisco Rios</remarks>
+        /// /api/persona/ObtenerPersonaPaginado
+        [HttpPost("ObtenerPersonaPaginado")]
+        public async Task<ActionResult<PaginationRequestBase<PersonViewModel>>> GetPersonaPaginado(PaginationDto pagination)
+        {
+            return await mediator.Send(new ObtenerPersonaPaginado.Ejecuta { pagination = pagination });
         }
     }
 }
