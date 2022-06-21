@@ -43,5 +43,7 @@ namespace _3._1.MCargoExpress.Dtos
         /// IVA
         /// </summary>
         public decimal IVA { get; set; }
+
+        public FacturaDto FacturasDto { get; set; }
     }
 }

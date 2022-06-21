@@ -84,7 +84,9 @@ namespace MCargoExpres.Api
             services.AddScoped<ITipoClienteService, TipoClienteService>();
             services.AddScoped<ITraduccionService, TraduccionService>();
             services.AddScoped<IClienteService, ClienteService>();
-
+            services.AddScoped<IFacturaService, FacturaService>();
+            services.AddScoped<IDetalleFacturaService, DetalleFacturaService>();
+            services.AddScoped<IEnvioService, EnvioService>();
             //Se deshabilita temporalmente porque se configura mas adelante.
             //StandardKernel _kernel = new StandardKernel();
             //_kernel.Load(Assembly.GetExecutingAssembly());

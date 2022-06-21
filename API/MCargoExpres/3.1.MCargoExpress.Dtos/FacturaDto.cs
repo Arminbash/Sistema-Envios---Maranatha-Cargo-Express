@@ -61,7 +61,7 @@ namespace _3._1.MCargoExpress.Dtos
         /// propiedad de navegacion de Recive
         /// </summary>
 
-    
 
+        public virtual ICollection<DetalleFacturaDto> DetalleFacturaDto { get; set; }
     }
 }

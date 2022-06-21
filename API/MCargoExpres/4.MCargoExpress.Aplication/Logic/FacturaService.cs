@@ -40,8 +40,20 @@ namespace _4.MCargoExpress.Aplication.Logic
             using (var _UnitOfWork = new Contextos().GetUnitOfWork())
             {
                 var repository = _UnitOfWork.Repository<Factura>();
+                var repositoryDt = _UnitOfWork.Repository<DetalleFactura>();
                 Factura newFactura = new Factura();
                 mapper.Map(facturaDto, newFactura);
+                newFactura.DetalleFactura = new List<DetalleFactura>();
+
+                if (facturaDto.DetalleFacturaDto != null)
+                {
+                    foreach (var item in facturaDto.DetalleFacturaDto)
+                    {
+                        DetalleFactura dt = new DetalleFactura();
+                        mapper.Map<DetalleFacturaDto, DetalleFactura>(item, dt);
+                        repositoryDt.AddEntity(dt);
+                    }
+                }
                 repository.AddEntity(newFactura);
                 await _UnitOfWork.Complete();
 
