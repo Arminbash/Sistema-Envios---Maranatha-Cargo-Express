@@ -22,7 +22,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente
         /// Parametros para el contrato
         /// </summary>
         /// Francisco Rios
-        public class Ejecuta : IRequest<ClienteDto>
+        public class Ejecuta : IRequest<ClientViewModel>
         {
             public int Id { get; set; }
         }
@@ -30,7 +30,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
         /// Francisco Rios
-        public class Manejador : IRequestHandler<Ejecuta, ClienteDto>
+        public class Manejador : IRequestHandler<Ejecuta, ClientViewModel>
         {
             private readonly IClienteService clienteService;
 
@@ -50,7 +50,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona2.Cliente
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns>Cliente</returns>
             /// Francisco Rios
-            public async Task<ClienteDto> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<ClientViewModel> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var query = clienteService.GetClientePorIdAsync(request.Id);
                 if (query == null)

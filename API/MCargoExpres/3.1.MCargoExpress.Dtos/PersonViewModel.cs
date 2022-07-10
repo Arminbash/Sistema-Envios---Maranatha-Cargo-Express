@@ -11,7 +11,7 @@ namespace _3._1.MCargoExpress.Dtos
         /// <summary>
         /// Primary key
         /// </summary>
-        public int Id { get; set; }
+        public int id { get; set; }
         /// <summary>
         /// Primer Nombre
         /// </summary>

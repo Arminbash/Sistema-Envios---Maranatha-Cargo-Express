@@ -40,7 +40,6 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente.Cliente
             {
                 RuleFor(x => x.PersonaId).NotEmpty();
                 RuleFor(x => x.TipoClienteId).NotEmpty();
-                RuleFor(x => x.Estado).NotEmpty();
             }
         }
         /// <summary>

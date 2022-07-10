@@ -25,7 +25,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
             public int PersonaId { get; set; }
             
             public int TipoClienteId { get; set; }
-            
+
             public bool Estado { get; set; }
         }
         public class CreateValidacion : AbstractValidator<Ejecuta>
@@ -37,7 +37,6 @@ namespace _5._1.MCargoExpress.CRUD.Commands.TipoPersona.TipoCliente
             {
                 RuleFor(x => x.PersonaId).NotEmpty();
                 RuleFor(x => x.TipoClienteId).NotEmpty();
-                RuleFor(x => x.Estado).NotEmpty();
             }
         }
         /// <summary>

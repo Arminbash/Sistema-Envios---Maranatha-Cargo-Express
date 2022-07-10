@@ -119,7 +119,7 @@ namespace _4.MCargoExpress.Aplication.Logic
 
                 var listPersona =  _uniOfWork.Repository<Persona>().ApplySpecification(query).Select(x=> new PersonViewModel
                 {
-                  Id= x.Id,
+                  id= x.Id,
                   Nombre = x.PrimerNombre + " " + x.PrimerApellido + " "+ x.SegundoApellido,
                   Cedula = x.Cedula,
                   Correo = x.Correo,

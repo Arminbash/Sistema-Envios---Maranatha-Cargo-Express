@@ -41,7 +41,7 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// <returns>Cliente</returns>
         /// Francisco Rios
         public async Task<ClienteDto> AddClienteAsync(ClienteDto clienteDto)
-        {
+         {
             using (var _UnitOfWork = new Contextos().GetUnitOfWork())
             {
                 var repository = _UnitOfWork.Repository<Cliente>();
@@ -73,13 +73,23 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// <param name="IdCliente">IdCliente</param>
         /// <returns>Retorna un Cliente</returns>
         /// Francisco Rios
-        public async Task<ClienteDto> GetClientePorIdAsync(int IdCliente)
+        public async Task<ClientViewModel> GetClientePorIdAsync(int IdCliente)
         {
             using (var _UnitOfWork = new Contextos().GetUnitOfWork())
             {
                 var query = new Specifications.BaseSpecification<Cliente>(x => x.Id == IdCliente);
                 var cliente = await _UnitOfWork.Repository<Cliente>().GetByIdWithSpec(query);
-                return mapper.Map<Cliente, ClienteDto>(cliente);
+                var listCliente = _UnitOfWork.Repository<Cliente>().ApplySpecification(query).Select(x => new ClientViewModel
+                {
+                    Id = x.Id,
+                    PersonaId = x.PersonaId,
+                    TipoClienteId = x.TipoClienteId,
+                    Nombre = x.Persona.PrimerNombre + " " + x.Persona.PrimerApellido + " " + x.Persona.SegundoApellido,
+                    TipoCliente = x.TipoCliente.Tipo,
+                    Estado = x.Estado
+
+                });
+                return listCliente.FirstOrDefault();
             }
         }
         /// <summary>
@@ -106,7 +116,7 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// <param name="pagination">Objeto con los datos de paginacion</param>
         /// <returns>Retorna los cliente paginados</returns>
         /// Francisco Rios 
-        public async Task<PaginationRequestBase<ClienteDto>> GetClientePaginadoAsync(PaginationDto pagination)
+        public async Task<PaginationRequestBase<ClientViewModel>> GetClientePaginadoAsync(PaginationDto pagination)
         {
             using (var _unitOfWork = new Contextos().GetUnitOfWork())
             {
@@ -118,17 +128,18 @@ namespace _4.MCargoExpress.Aplication.Logic
 
                 query.ApplyPaging(pagination.perpage * (pagination.page - 1), pagination.perpage);
 
-                var listTipoCliente =  _unitOfWork.Repository<Cliente>().ApplySpecification(query).Select(x => new ClienteDto
+                var listTipoCliente =  _unitOfWork.Repository<Cliente>().ApplySpecification(query).Select(x => new ClientViewModel
                 {
                     Id = x.Id,
                     PersonaId = x.PersonaId,
                     TipoClienteId =x.TipoClienteId,
-                    PrimerNombre  = x.Persona.PrimerNombre,
+                    Nombre  = x.Persona.PrimerNombre + " " + x.Persona.PrimerApellido + " " + x.Persona.SegundoApellido,
+                    TipoCliente = x.TipoCliente.Tipo,
                     Estado= x.Estado
 
                 });
 
-                var request = new PaginationRequestBase<ClienteDto>
+                var request = new PaginationRequestBase<ClientViewModel>
                 {
                     meta = new PaginationMetadataBase
                     {

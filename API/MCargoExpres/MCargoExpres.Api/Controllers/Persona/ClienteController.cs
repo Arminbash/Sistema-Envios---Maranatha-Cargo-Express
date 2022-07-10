@@ -68,7 +68,7 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <remarks>Francisco Rios</remarks>
         // /api/Cliente/ObtenerCliente
         [HttpGet("ObtenerCliente/{id}")]
-        public async Task<ActionResult<ClienteDto>> GetClienteXId(int id)
+        public async Task<ActionResult<ClientViewModel>> GetClienteXId(int id)
         {
             return await mediator.Send(new ObtenerClientePorId.Ejecuta { Id = id });
         }
@@ -80,7 +80,7 @@ namespace MCargoExpres.Api.Controllers._Persona
         /// <remarks>Francisco Rios/remarks>
         /// /api/Cliente/ObtenerClientePaginado
         [HttpPost("ObtenerClientePaginado")]
-        public async Task<ActionResult<PaginationRequestBase<ClienteDto>>> GetClientePaginado(PaginationDto pagination)
+        public async Task<ActionResult<PaginationRequestBase<ClientViewModel>>> GetClientePaginado(PaginationDto pagination)
         {
             return await mediator.Send(new ObtenerClientePaginado.Ejecuta { pagination = pagination });
         }

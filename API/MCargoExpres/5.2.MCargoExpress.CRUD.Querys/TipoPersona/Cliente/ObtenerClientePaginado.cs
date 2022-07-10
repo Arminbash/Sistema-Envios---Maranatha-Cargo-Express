@@ -22,7 +22,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona.Cliente
         /// Parametros para el contrato
         /// </summary>
         /// Francisco Rios
-        public class Ejecuta : IRequest<PaginationRequestBase<ClienteDto>>
+        public class Ejecuta : IRequest<PaginationRequestBase<ClientViewModel>>
         {
             public PaginationDto pagination { get; set; }
         }
@@ -44,7 +44,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona.Cliente
             /// Clase encargada de ejecutar el contrato
             /// </summary>
             /// Francisco Rios
-            public class Manejador : IRequestHandler<Ejecuta, PaginationRequestBase<ClienteDto>>
+            public class Manejador : IRequestHandler<Ejecuta, PaginationRequestBase<ClientViewModel>>
             {
                 private readonly IClienteService _clienteService;
                 /// <summary>
@@ -62,7 +62,7 @@ namespace _5._2.MCargoExpress.CRUD.Querys.TipoPersona.Cliente
                 /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
                 /// <returns>Lista de cliente paginados</returns>
                 /// Francisco Rios
-                public async Task<PaginationRequestBase<ClienteDto>> Handle(Ejecuta request, CancellationToken cancellationToken)
+                public async Task<PaginationRequestBase<ClientViewModel>> Handle(Ejecuta request, CancellationToken cancellationToken)
                 {
                     var query = await _clienteService.GetClientePaginadoAsync(request.pagination);
                     return query;

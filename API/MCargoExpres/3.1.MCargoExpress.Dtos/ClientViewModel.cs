@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _3._1.MCargoExpress.Dtos
 {
-   public class ClienteDto
+   public class ClientViewModel
     {
         /// <summary>
         /// Primary key
@@ -16,6 +16,14 @@ namespace _3._1.MCargoExpress.Dtos
         /// clave forena de persona
         /// </summary>
         public int PersonaId { get; set; }
+        /// <summary>
+        /// nombre de persona
+        /// </summary>
+        public string Nombre { get; set; }
+        /// <summary>
+        /// Tipo de Cliente
+        /// </summary>
+         public string TipoCliente { get; set; }
         /// <summary>
         /// Tipo de Cliente
         /// </summary>
