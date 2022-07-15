@@ -60,5 +60,7 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// <returns>Retorna las facturas  paginadas</returns>
         /// Eddy Vargas
         Task<PaginationRequestBase<FacturaDto>> GetFacturaPaginadoAsync(PaginationDto pagination);
+
+        
     }
 }

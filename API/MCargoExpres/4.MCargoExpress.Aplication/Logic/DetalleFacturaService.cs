@@ -32,7 +32,7 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// <summary>
         /// Agrega un nuevo detalle de factura
         /// </summary>
-        /// <param name="Factura">Factura</param>
+        /// <param name="DetalleFactura">Detalle de Factura</param>
         /// <returns>Factura</returns>
         /// Eddy Vargas
         public async Task<DetalleFacturaDto> AddDetalleFacturaAsync(DetalleFacturaDto detalleDto)
@@ -55,11 +55,31 @@ namespace _4.MCargoExpress.Aplication.Logic
             throw new NotImplementedException();
         }
 
-        public Task<DetalleFacturaDto> GetlDetalleFacturaPorIdAsync(int DetalleId)
+        /// <summary>
+        /// Obtenemos una lista de detalles de facturas por facturaid
+        /// </summary>
+        /// <param name="DetalleFactura">Detalle de Factura</param>
+        /// <returns>Factura</returns>
+        /// Eddy Vargas
+
+        public async Task<DetalleFacturaDto> GetlDetalleFacturaPorIdAsync(int DetalleId)
         {
-            throw new NotImplementedException();
+            using (var _UnitOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<DetalleFactura>(x => x.FacturaId == DetalleId);
+                var detalle = await _UnitOfWork.Repository<DetalleFactura>().GetByIdWithSpec(query);
+
+                return mapper.Map<DetalleFactura, DetalleFacturaDto>(detalle);
+            }
         }
 
+
+        /// <summary>
+        /// Metodo para editar el detalle de la fcatura seleccionada
+        /// </summary>
+        /// <param name="DetalleFactura">Detalle de Factura</param>
+        /// <returns>Factura</returns>
+        /// Eddy Vargas
         public async Task<DetalleFacturaDto> UpdatelDetalleFacturaAsync(DetalleFacturaDto detalleDto)
         {
             using (var _UnitOfWork = new Contextos().GetUnitOfWork())

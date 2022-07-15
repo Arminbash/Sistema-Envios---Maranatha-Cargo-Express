@@ -19,6 +19,7 @@ namespace _4.MCargoExpress.Aplication.Logic
     public class FacturaService : IFacturaService
     {
         private IMapper mapper;
+        
 
         /// <summary>
         /// Constructor del servicio
@@ -40,23 +41,17 @@ namespace _4.MCargoExpress.Aplication.Logic
             using (var _UnitOfWork = new Contextos().GetUnitOfWork())
             {
                 var repository = _UnitOfWork.Repository<Factura>();
-                var repositoryDt = _UnitOfWork.Repository<DetalleFactura>();
+               
+
                 Factura newFactura = new Factura();
                 mapper.Map(facturaDto, newFactura);
-                newFactura.DetalleFactura = new List<DetalleFactura>();
 
-                if (facturaDto.DetalleFacturaDto != null)
-                {
-                    foreach (var item in facturaDto.DetalleFacturaDto)
-                    {
-                        DetalleFactura dt = new DetalleFactura();
-                        mapper.Map<DetalleFacturaDto, DetalleFactura>(item, dt);
-                        repositoryDt.AddEntity(dt);
-                    }
-                }
+                
                 repository.AddEntity(newFactura);
                 await _UnitOfWork.Complete();
 
+
+                facturaDto.Id = newFactura.Id;
                 return facturaDto;
             }
         }
@@ -71,9 +66,14 @@ namespace _4.MCargoExpress.Aplication.Logic
             throw new NotImplementedException();
         }
 
-        public Task<FacturaDto> GetFacturaPorIdAsync(int FacturaId)
+        public async Task<FacturaDto> GetFacturaPorIdAsync(int FacturaId)
         {
-            throw new NotImplementedException();
+            using (var _UnitOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<Factura>(x => x.Id == FacturaId);
+                var factura = await _UnitOfWork.Repository<Factura>().GetByIdWithSpec(query);
+                return mapper.Map<Factura, FacturaDto>(factura);
+            }
         }
 
         /// <summary>

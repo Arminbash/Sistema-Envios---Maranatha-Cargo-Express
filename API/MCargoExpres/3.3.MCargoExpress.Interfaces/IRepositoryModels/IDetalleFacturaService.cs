@@ -48,5 +48,7 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// Eddy Vargas
         /// 
         Task<DetalleFacturaDto> GetlDetalleFacturaPorIdAsync(int DetalleId);
+
+        
     }
 }

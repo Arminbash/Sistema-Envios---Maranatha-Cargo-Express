@@ -1,21 +1,24 @@
 ﻿using _3._1.MCargoExpress.Dtos;
 using _3._3.MCargoExpress.Interfaces.IRepositoryModels;
+using _4.MCargoExpress.Aplication.Exceptions;
 using FluentValidation;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace _5._1.MCargoExpress.CRUD.Commands.Factura
 {
-    /// <summary>
-    /// Mediador para crear un  Factura
+
+    // <summary>
+    /// Mediador para editar factura
     /// </summary>
     /// Eddy Vargas
-    public class CreateFactura 
+    public class UpdateFactura
     {
         /// <summary>
         /// Parametros para el contrato
@@ -33,7 +36,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
             /// </summary>
 
             public int EnviaId { get; set; }
-            
+
             public string CodigoPostal { get; set; }
 
             public int ClienteId { get; set; }
@@ -66,7 +69,6 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
             /// </summary>
 
             public ICollection<DetalleFacturaDto> ListaDetalleFactura { get; set; }
-
         }
 
         public class CreateValidacion : AbstractValidator<Ejecuta>
@@ -75,16 +77,14 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
             /// Fluent Validation
             /// </summary>
             /// 
-
-
-            public  CreateValidacion()
+            public CreateValidacion()
             {
                 RuleFor(x => x.EnviaId).NotEmpty();
                 RuleFor(x => x.ClienteId).NotEmpty();
                 RuleFor(x => x.FechaIngreso);
                 RuleFor(x => x.Observacion).NotEmpty().WithMessage("Por favor escriba una observación");
                 RuleForEach(x => x.ListaDetalleFactura).NotNull().NotEmpty().WithMessage("Agregue al menos un detalle de producto");
-            
+
 
                 RuleForEach(x => x.ListaDetalleFactura)
             .Must(y => y.Descripcion != string.Empty && y.Descripcion != null).NotNull().NotEmpty().WithMessage("Por favor escriba una descripcion del producto");
@@ -92,6 +92,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
             .Must(y => y.Rate != 0).NotNull().NotEmpty().WithMessage("Por favor escriba el rate");
             }
         }
+
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
@@ -100,6 +101,8 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
             private readonly IFacturaService facturaService;
 
             private readonly IDetalleFacturaService detalleServicio;
+
+
             /// <summary>
             /// constructor para injectar las dependencias
             /// </summary>
@@ -110,64 +113,55 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
                 facturaService = _facturaService;
                 detalleServicio = _detalleFacturaService;
             }
+
             /// <summary>
-            /// Metodo que ejecuta el contrato y devuelve la promesa
+            /// Metodo que edita el contrato y devuelve la promesa
             /// </summary>
             /// <param name="request">Clase modelo</param>
             /// <param name="cancellationToken">Hilo de cancelacion de contrato</param>
             /// <returns></returns>
             /// Eddy Vargas
 
-
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                FacturaDto query;
-                //object ListaJsonDetalle = null; 
-                query = new FacturaDto { 
-                
-                
-                    EnviaId = request.EnviaId,
-                    ClienteId = request.ClienteId,
-                    TipoMoneda = request.TipoMoneda,
-                    TipoPago = request.TipoPago,
-                    Observacion = request.Observacion,
-                    TasaCambio = request.TasaCambio
-                
-                };
-                var valor = await facturaService.AddFacturaAsync(query);
+                var query = await facturaService.GetFacturaPorIdAsync(request.Id);
 
-                if (request.ListaDetalleFactura != null)
+                if (query == null)
                 {
-                    foreach (var item in request.ListaDetalleFactura)
-                    {
-                        
-                        DetalleFacturaDto detalle;
-                        detalle = new DetalleFacturaDto
-                        {
-                            FacturaId = valor.Id,
-                            Descripcion = item.Descripcion,
-                            Rate = item.Rate,
-                            LBS = item.LBS,
-                            VOL = item.VOL,
-                            IVA = item.IVA,
-                            Estado = true
-                        };
-                      await detalleServicio.AddDetalleFacturaAsync(detalle);
-
-                    }
+                    throw new ExceptionBase(HttpStatusCode.BadRequest, new { Mensaje = "Factura no encontrado" });
                 }
-                               
 
-                if (valor != null )
+                query.Id = request.Id;
+                query.TipoMoneda = request.TipoMoneda ?? query.TipoMoneda;
+                query.TipoPago = request.TipoPago ?? query.TipoPago;
+                query.Observacion = request.Observacion ?? query.Observacion;
+
+                var valor = await facturaService.UpdateFacturaAsync(query);
+
+                foreach (var item in request.ListaDetalleFactura)
+                {
+                    DetalleFacturaDto detalle;
+                    detalle = new DetalleFacturaDto
+                    {
+                        Id = item.Id,
+                        FacturaId = valor.Id,
+                        Descripcion = item.Descripcion,
+                        Rate = item.Rate,
+                        LBS = item.LBS,
+                        VOL = item.VOL,
+                        IVA = item.IVA,
+                        Estado = true
+                    };
+                    await detalleServicio.UpdatelDetalleFacturaAsync(detalle);
+                }
+
+
+                if (valor != null)
                 {
                     return Unit.Value;
-                  
                 }
-
-
-                throw new Exception("No se puede insertar la factura");
+                throw new Exception("No se editaron los cambios en la factura");
             }
         }
     }
 }
-   
