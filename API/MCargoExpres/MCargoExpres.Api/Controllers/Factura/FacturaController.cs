@@ -29,7 +29,7 @@ namespace MCargoExpres.Api.Controllers.Factura
         // /api/Factura/CreateFactura
 
         [HttpPost("CreateFactura")]
-        public async Task<ActionResult<Unit>>  CreateFactura(CreateFactura.Ejecuta parametros)
+        public async Task<ActionResult<FacturaDto>>  CreateFactura(CreateFactura.Ejecuta parametros)
         {
             return await mediator.Send(parametros);
         }
@@ -43,7 +43,7 @@ namespace MCargoExpres.Api.Controllers.Factura
         /// <remarks>Eddy vargas</remarks>
         // /api/Factura/UpdateFactura
         [HttpPut("UpdateFactura")]
-        public async Task<ActionResult<Unit>> UpdateFactura(UpdateFactura.Ejecuta data)
+        public async Task<ActionResult<FacturaDto>> UpdateFactura(UpdateFactura.Ejecuta data)
         {
             return await mediator.Send(data);
         }

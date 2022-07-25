@@ -29,6 +29,8 @@ namespace _4.MCargoExpress.Aplication.Logic
             mapper = _mapper;
         }
 
+       
+
         /// <summary>
         /// Agrega un nuevo detalle de factura
         /// </summary>
@@ -62,14 +64,25 @@ namespace _4.MCargoExpress.Aplication.Logic
         /// <returns>Factura</returns>
         /// Eddy Vargas
 
-        public async Task<DetalleFacturaDto> GetlDetalleFacturaPorIdAsync(int DetalleId)
+        public async Task<DetalleFacturaDto> GetlDetalleFacturaPorIdAsync(int FacturaId)
         {
             using (var _UnitOfWork = new Contextos().GetUnitOfWork())
             {
-                var query = new Specifications.BaseSpecification<DetalleFactura>(x => x.FacturaId == DetalleId);
+                var query = new Specifications.BaseSpecification<DetalleFactura>(x => x.FacturaId == FacturaId);
                 var detalle = await _UnitOfWork.Repository<DetalleFactura>().GetByIdWithSpec(query);
 
                 return mapper.Map<DetalleFactura, DetalleFacturaDto>(detalle);
+            }
+        }
+
+        public async Task<List<DetalleFacturaDto>> GetlDetalleFacturaPorIdAsyncList(int FacturaId)
+        {
+            using (var _UnitOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<DetalleFactura>(x => x.FacturaId == FacturaId);
+                var detalle = await _UnitOfWork.Repository<DetalleFactura>().GetAllWithSpec(query);
+
+                return mapper.Map<List<DetalleFactura>, List<DetalleFacturaDto>>(detalle.ToList());
             }
         }
 

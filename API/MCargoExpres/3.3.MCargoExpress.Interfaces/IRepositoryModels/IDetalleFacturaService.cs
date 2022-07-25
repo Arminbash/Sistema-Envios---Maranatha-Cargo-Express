@@ -23,6 +23,7 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         Task<DetalleFacturaDto> AddDetalleFacturaAsync(DetalleFacturaDto detalleDto);
 
 
+        
         /// <summary>
         /// Actualiza el detalle de la factura
         /// </summary>
@@ -47,8 +48,16 @@ namespace _3._3.MCargoExpress.Interfaces.IRepositoryModels
         /// <returns></returns>
         /// Eddy Vargas
         /// 
-        Task<DetalleFacturaDto> GetlDetalleFacturaPorIdAsync(int DetalleId);
+        Task<DetalleFacturaDto> GetlDetalleFacturaPorIdAsync(int FacturaId);
 
-        
+
+        /// <summary>
+        /// Obtiene los detalles de factura por Id
+        /// </summary>
+        /// <param name="DetalleFactura">DetalleFacturaId</param>
+        /// <returns></returns>
+        /// Eddy Vargas
+        Task<List<DetalleFacturaDto>> GetlDetalleFacturaPorIdAsyncList(int FacturaId);
+
     }
 }

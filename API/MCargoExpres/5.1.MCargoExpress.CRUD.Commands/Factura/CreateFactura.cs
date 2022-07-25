@@ -20,7 +20,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest
+        public class Ejecuta : IRequest<FacturaDto>
         {
             /// <summary>
             /// Primary key
@@ -95,7 +95,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta, FacturaDto>
         {
             private readonly IFacturaService facturaService;
 
@@ -119,48 +119,26 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
             /// Eddy Vargas
 
 
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<FacturaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 FacturaDto query;
-                //object ListaJsonDetalle = null; 
+               
                 query = new FacturaDto { 
-                
                 
                     EnviaId = request.EnviaId,
                     ClienteId = request.ClienteId,
                     TipoMoneda = request.TipoMoneda,
                     TipoPago = request.TipoPago,
                     Observacion = request.Observacion,
-                    TasaCambio = request.TasaCambio
-                
+                    TasaCambio = request.TasaCambio,
+                    DetalleFacturaDto  = request.ListaDetalleFactura
                 };
                 var valor = await facturaService.AddFacturaAsync(query);
 
-                if (request.ListaDetalleFactura != null)
-                {
-                    foreach (var item in request.ListaDetalleFactura)
-                    {
-                        
-                        DetalleFacturaDto detalle;
-                        detalle = new DetalleFacturaDto
-                        {
-                            FacturaId = valor.Id,
-                            Descripcion = item.Descripcion,
-                            Rate = item.Rate,
-                            LBS = item.LBS,
-                            VOL = item.VOL,
-                            IVA = item.IVA,
-                            Estado = true
-                        };
-                      await detalleServicio.AddDetalleFacturaAsync(detalle);
-
-                    }
-                }
-                               
-
+               
                 if (valor != null )
                 {
-                    return Unit.Value;
+                    return query;
                   
                 }
 

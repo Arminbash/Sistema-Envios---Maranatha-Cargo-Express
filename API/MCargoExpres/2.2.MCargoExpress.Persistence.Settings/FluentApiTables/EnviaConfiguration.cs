@@ -31,7 +31,7 @@ namespace _2._2.MCargoExpress.Persistence.Settings.FluentApiTables
                .Property(b => b.Direccion)
                .IsRequired();
             builder
-                .Property(b => b.Cuidad)
+                .Property(b => b.Ciudad)
                 .IsRequired();
             builder
                .Property(b => b.Estados)

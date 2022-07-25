@@ -23,7 +23,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
         /// <summary>
         /// Parametros para el contrato
         /// </summary>
-        public class Ejecuta : IRequest
+        public class Ejecuta : IRequest<FacturaDto>
         {
             /// <summary>
             /// Primary key
@@ -96,7 +96,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
         /// <summary>
         /// Clase que se encarga de ejecutar el contrato
         /// </summary>
-        public class Manejador : IRequestHandler<Ejecuta>
+        public class Manejador : IRequestHandler<Ejecuta, FacturaDto>
         {
             private readonly IFacturaService facturaService;
 
@@ -122,8 +122,9 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
             /// <returns></returns>
             /// Eddy Vargas
 
-            public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<FacturaDto> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
+                            
                 var query = await facturaService.GetFacturaPorIdAsync(request.Id);
 
                 if (query == null)
@@ -135,6 +136,7 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
                 query.TipoMoneda = request.TipoMoneda ?? query.TipoMoneda;
                 query.TipoPago = request.TipoPago ?? query.TipoPago;
                 query.Observacion = request.Observacion ?? query.Observacion;
+                query.DetalleFacturaDto = request.ListaDetalleFactura;
 
                 var valor = await facturaService.UpdateFacturaAsync(query);
 
@@ -154,11 +156,11 @@ namespace _5._1.MCargoExpress.CRUD.Commands.Factura
                     };
                     await detalleServicio.UpdatelDetalleFacturaAsync(detalle);
                 }
-
+                
 
                 if (valor != null)
                 {
-                    return Unit.Value;
+                    return query;
                 }
                 throw new Exception("No se editaron los cambios en la factura");
             }

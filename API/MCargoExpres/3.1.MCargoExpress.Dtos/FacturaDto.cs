@@ -13,6 +13,10 @@ namespace _3._1.MCargoExpress.Dtos
     /// Eddy Vargas
     public class FacturaDto
     {
+        public FacturaDto()
+        {
+            DetalleFacturaDto = new List<DetalleFacturaDto>();
+        }
         /// <summary>
         /// Primary key
         /// </summary>
@@ -26,7 +30,7 @@ namespace _3._1.MCargoExpress.Dtos
         public int EnviaId { get; set; }
         public string Direccion { get; set; }
        
-        public string Cuidad { get; set; }
+        public string Ciudad { get; set; }
        
         public string Estados { get; set; }
       
@@ -61,6 +65,7 @@ namespace _3._1.MCargoExpress.Dtos
         /// propiedad de navegacion de Recive
         /// </summary>
 
+        public bool Estatus { get; set; }
 
         public virtual ICollection<DetalleFacturaDto> DetalleFacturaDto { get; set; }
     }

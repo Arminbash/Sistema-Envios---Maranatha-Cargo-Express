@@ -46,9 +46,14 @@ namespace _4.MCargoExpress.Aplication.Logic
             throw new NotImplementedException();
         }
 
-        public Task<EnvioDto> GetEnvioPorIdAsync(int EnvioId)
+        public async Task<EnvioDto> GetEnvioPorIdAsync(int EnvioId)
         {
-            throw new NotImplementedException();
+            using (var _UnitOfWork = new Contextos().GetUnitOfWork())
+            {
+                var query = new Specifications.BaseSpecification<Envia>(x => x.Id == EnvioId);
+                var envio = await _UnitOfWork.Repository<Envia>().GetByIdWithSpec(query);
+                return mapper.Map<Envia, EnvioDto>(envio);
+            }
         }
 
         public async Task<EnvioDto> UpdateEnvioAsync(EnvioDto envioDto)

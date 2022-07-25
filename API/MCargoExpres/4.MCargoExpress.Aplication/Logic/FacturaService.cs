@@ -41,15 +41,11 @@ namespace _4.MCargoExpress.Aplication.Logic
             using (var _UnitOfWork = new Contextos().GetUnitOfWork())
             {
                 var repository = _UnitOfWork.Repository<Factura>();
-               
 
                 Factura newFactura = new Factura();
                 mapper.Map(facturaDto, newFactura);
-
-                
                 repository.AddEntity(newFactura);
                 await _UnitOfWork.Complete();
-
 
                 facturaDto.Id = newFactura.Id;
                 return facturaDto;

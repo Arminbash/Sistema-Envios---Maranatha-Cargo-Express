@@ -24,9 +24,9 @@ namespace _1.MCargoExpress.Domain
         /// </summary>
         public string Direccion { get; set; }
         /// <summary>
-        /// Cuidad
+        /// Ciudad
         /// </summary>
-        public string Cuidad { get; set; }
+        public string Ciudad { get; set; }
         ///<summary>
         /// Estado
         /// </summary>
